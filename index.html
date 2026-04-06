@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apresentação TCC - Fragmentação Cognitiva</title>
+    <style>
+        /* Variáveis de cores para manter o padrão visual */
+        :root {
+            --cor-primaria: #1a252f; /* Azul escuro/sóbrio */
+            --cor-secundaria: #2c3e50;
+            --cor-destaque: #e74c3c; /* Vermelho para chamar atenção (irônico para o tema) */
+            --cor-fundo: #f4f7f6;
+            --cor-texto: #333333;
+        }
+
+        /* Reset básico e tipografia */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--cor-texto);
+            background-color: var(--cor-fundo);
+        }
+
+        /* Cabeçalho / Título do TCC */
+        header {
+            background-color: var(--cor-primaria);
+            color: white;
+            text-align: center;
+            padding: 4rem 1rem;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.2;
+        }
+
+        .subtitulo {
+            font-size: 1.2rem;
+            color: #bdc3c7;
+            margin-top: 1rem;
+        }
+
+        .autores {
+            margin-top: 2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #ecf0f1;
+        }
+
+        .autores span {
+            margin: 0 10px;
+        }
+
+        /* Container Principal */
+        main {
+            max-width: 1000px;
+            margin: -2rem auto 2rem auto; /* Sobe um pouco por cima do header */
+            padding: 0 1rem;
+            position: relative;
+        }
+
+        /* Sessões de conteúdo */
+        section {
+            background: white;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            color: var(--cor-primaria);
+            border-bottom: 3px solid var(--cor-destaque);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        /* Grid para os impactos (Cards) */
+        .grid-impactos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: var(--cor-fundo);
+            padding: 1.5rem;
+            border-radius: 6px;
+            border-left: 4px solid var(--cor-secundaria);
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            color: var(--cor-secundaria);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        /* Rodapé */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: var(--cor-primaria);
+            color: #bdc3c7;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Impactos do Consumo Excessivo de Vídeos Curtos na Fragmentação Cognitiva dos Jovens</h1>
+        <p class="subtitulo">Apresentação de Trabalho de Conclusão de Curso</p>
+        <div class="autores">
+            <span>Emil Fiedler</span> • 
+            <span>Camyla Lessa</span> • 
+            <span>Yasmin Alves</span>
+        </div>
+    </header>
+
+    <main>
+        <section id="introducao">
+            <h2>Contexto e Problematização</h2>
+            <p>Com a ascensão de plataformas como TikTok, Instagram Reels e YouTube Shorts, o consumo de conteúdo digital mudou drasticamente. Este projeto investiga como o formato de vídeos de 15 a 60 segundos afeta a capacidade de concentração prolongada e a retenção de informações na juventude.</p>
+            <p>A principal hipótese é que o ciclo rápido de recompensas (picos de dopamina) gerado pelo "scroll infinito" está diretamente ligado a um estado de fragmentação cognitiva.</p>
+        </section>
+
+        <section id="metodologia">
+            <h2>Metodologia</h2>
+            <p>Nossa pesquisa baseou-se em uma abordagem mista (qualitativa e quantitativa). Foram realizados:</p>
+            <ul>
+                <li>Revisão bibliográfica sobre neurociência e comportamento digital.</li>
+                <li>Questionários aplicados a jovens de 15 a 24 anos.</li>
+                <li>Análise de métricas de tempo de tela e percepção de foco relatada pelos usuários.</li>
+            </ul>
+        </section>
+
+        <section id="resultados">
+            <h2>Principais Impactos Observados</h2>
+            <p>A partir da coleta de dados, identificamos três grandes eixos de impacto na cognição dos jovens analisados:</p>
+            
+            <div class="grid-impactos">
+                <div class="card">
+                    <h3>Déficit de Atenção Sustentada</h3>
+                    <p>Dificuldade crescente em realizar tarefas que exigem foco contínuo, como leitura de textos longos ou estudos aprofundados.</p>
+                </div>
+                <div class="card">
+                    <h3>Busca por Gratificação Imediata</h3>
+                    <p>Condicionamento do cérebro a esperar recompensas rápidas, gerando frustração e ansiedade em atividades de longo prazo.</p>
+                </div>
+                <div class="card">
+                    <h3>Fadiga Mental e Retenção</h3>
+                    <p>A sobrecarga de estímulos e a rápida troca de contexto prejudicam a consolidação da memória de curto e longo prazo.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="conclusao">
+            <h2>Considerações Finais</h2>
+            <p>O estudo conclui que a moderação e o desenvolvimento de um "letramento digital" são essenciais. Não se trata apenas de proibir o uso, mas de educar os jovens sobre a higiene do tempo de tela e o funcionamento do próprio cérebro diante de designs de plataformas feitos para reter a atenção a qualquer custo.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Emil Fiedler, Camyla Lessa e Yasmin Alves. Trabalho de Conclusão de Curso.</p>
+    </footer>
+
+</body>
+</html>
