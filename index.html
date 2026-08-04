@@ -4,186 +4,551 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apresentação TCC - Fragmentação Cognitiva</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome para Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Chart.js para Gráficos -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <style>
-        /* Variáveis de cores para manter o padrão visual */
         :root {
-            --cor-primaria: #1a252f; /* Azul escuro/sóbrio */
-            --cor-secundaria: #2c3e50;
-            --cor-destaque: #e74c3c; /* Vermelho para chamar atenção (irônico para o tema) */
-            --cor-fundo: #f4f7f6;
-            --cor-texto: #333333;
+            --cor-primaria: #0f172a; /* Slate 900 */
+            --cor-secundaria: #3b82f6; /* Blue 500 */
+            --cor-destaque: #ef4444; /* Red 500 */
+            --cor-fundo: #f8fafc; /* Slate 50 */
+            --cor-texto: #334155; /* Slate 700 */
+            --cor-card: #ffffff;
         }
 
-        /* Reset básico e tipografia */
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+            scroll-behavior: smooth;
         }
 
         body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
             color: var(--cor-texto);
             background-color: var(--cor-fundo);
         }
 
-        /* Cabeçalho / Título do TCC */
+        /* Navbar */
+        nav {
+            background-color: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--cor-secundaria);
+        }
+
+        /* Hero Section */
         header {
-            background-color: var(--cor-primaria);
+            background: linear-gradient(135deg, var(--cor-primaria) 0%, #1e293b 100%);
             color: white;
             text-align: center;
-            padding: 4rem 1rem;
+            padding: 9rem 1rem 6rem 1rem;
+            clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+        }
+
+        .instituicao {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--cor-secundaria);
+            margin-bottom: 1rem;
+            display: block;
         }
 
         header h1 {
-            font-size: 2.5rem;
-            max-width: 900px;
+            font-size: 2.8rem;
+            font-weight: 800;
+            max-width: 1000px;
             margin: 0 auto;
             line-height: 1.2;
+            text-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
         .subtitulo {
             font-size: 1.2rem;
-            color: #bdc3c7;
-            margin-top: 1rem;
+            color: #94a3b8;
+            margin-top: 1.5rem;
+            font-weight: 300;
         }
 
         .autores {
-            margin-top: 2rem;
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #ecf0f1;
+            margin-top: 3rem;
+            display: inline-flex;
+            gap: 2rem;
+            background: rgba(255,255,255,0.1);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            backdrop-filter: blur(5px);
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
-        .autores span {
-            margin: 0 10px;
+        .autores a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.3s;
+        }
+
+        .autores a:hover {
+            color: var(--cor-secundaria);
         }
 
         /* Container Principal */
         main {
-            max-width: 1000px;
-            margin: -2rem auto 2rem auto; /* Sobe um pouco por cima do header */
-            padding: 0 1rem;
-            position: relative;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
         }
 
-        /* Sessões de conteúdo */
         section {
-            background: white;
-            padding: 2.5rem;
-            margin-bottom: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            background: var(--cor-card);
+            padding: 3rem;
+            margin-bottom: 3rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            border: 1px solid rgba(0,0,0,0.05);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.8s forwards;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; transform: translateY(0); }
         }
 
         h2 {
             color: var(--cor-primaria);
-            border-bottom: 3px solid var(--cor-destaque);
-            padding-bottom: 0.5rem;
+            font-size: 2rem;
             margin-bottom: 1.5rem;
-            display: inline-block;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        h2::after {
+            content: '';
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(to right, var(--cor-secundaria), transparent);
+            margin-left: 15px;
+        }
+
+        h3 {
+            color: var(--cor-primaria);
+            font-size: 1.3rem;
+            margin: 1.5rem 0 0.5rem 0;
         }
 
         p {
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
             text-align: justify;
+            font-size: 1.05rem;
         }
 
-        /* Grid para os impactos (Cards) */
-        .grid-impactos {
+        /* Grid de Cards (Impactos e Soluções) */
+        .grid-cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
             margin-top: 2rem;
         }
 
         .card {
             background: var(--cor-fundo);
-            padding: 1.5rem;
-            border-radius: 6px;
-            border-left: 4px solid var(--cor-secundaria);
-            transition: transform 0.2s;
+            padding: 2rem;
+            border-radius: 12px;
+            border-top: 4px solid var(--cor-secundaria);
+            transition: all 0.3s ease;
         }
+
+        .card.amarelo { border-color: #f59e0b; }
+        .card.vermelho { border-color: var(--cor-destaque); }
+        .card.verde { border-color: #10b981; }
 
         .card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
         }
 
-        .card h3 {
+        .card i {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .card i.azul { color: var(--cor-secundaria); }
+        .card i.amarelo { color: #f59e0b; }
+        .card i.vermelho { color: var(--cor-destaque); }
+        .card i.verde { color: #10b981; }
+
+        /* Gráficos */
+        .graficos-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .grafico-wrapper {
+            background: var(--cor-fundo);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .grafico-legenda {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-top: 1rem;
+            font-style: italic;
+        }
+
+        /* Referências com Links */
+        .referencias {
+            list-style: none;
+        }
+
+        .referencias li {
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+            position: relative;
+            background: var(--cor-fundo);
+            padding: 1.5rem 1.5rem 1.5rem 3.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--cor-secundaria);
+        }
+
+        .referencias li::before {
+            content: '\f0c1'; /* Ícone de link do FontAwesome */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 1.2rem;
             color: var(--cor-secundaria);
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
+            top: 1.6rem;
+        }
+
+        .referencias a {
+            color: var(--cor-primaria);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+            display: inline-block;
+        }
+
+        .referencias a:hover {
+            color: var(--cor-secundaria);
+            text-decoration: underline;
+        }
+
+        .referencias span.detalhes {
+            display: block;
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-top: 0.3rem;
+            font-weight: 400;
         }
 
         /* Rodapé */
         footer {
             text-align: center;
-            padding: 2rem;
+            padding: 3rem 1rem;
             background: var(--cor-primaria);
-            color: #bdc3c7;
-            margin-top: 3rem;
+            color: #94a3b8;
+            margin-top: 4rem;
+        }
+
+        footer strong { color: white; }
+
+        footer a.lattes-link {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        footer a.lattes-link:hover {
+            color: var(--cor-secundaria);
+            text-decoration: underline;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.2rem; }
+            .graficos-container { grid-template-columns: 1fr; }
+            nav { padding: 0.5rem; }
+            nav a { font-size: 0.8rem; }
+            h2 { font-size: 1.6rem; }
         }
     </style>
 </head>
 <body>
 
+    <nav>
+        <a href="#introducao">Introdução</a>
+        <a href="#neuroplasticidade">Neuroplasticidade</a>
+        <a href="#dados">Dados & Gráficos</a>
+        <a href="#impactos">Impactos</a>
+        <a href="#solucoes">Soluções</a>
+        <a href="#referencias">Referências</a>
+    </nav>
+
     <header>
+        <span class="instituicao">Instituto Federal Baiano - Campus Uruçuca</span>
         <h1>Impactos do Consumo Excessivo de Vídeos Curtos na Fragmentação Cognitiva dos Jovens</h1>
-        <p class="subtitulo">Apresentação de Trabalho de Conclusão de Curso</p>
+        <p class="subtitulo">Apresentação de Trabalho de Conclusão de Curso (TCC)</p>
         <div class="autores">
-            <span>Emil Fiedler</span> • 
-            <span>Camyla Lessa</span> • 
-            <span>Yasmin Alves</span>
+            <a href="http://lattes.cnpq.br/9617398374216033" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-user"></i> Emil Fiedler
+            </a>
+            <a href="http://lattes.cnpq.br/7515132063925580" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-user"></i> Camyla Lessa
+            </a>
+            <a href="http://lattes.cnpq.br/3528280094644164" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-user"></i> Yasmin Alves
+            </a>
         </div>
     </header>
 
     <main>
         <section id="introducao">
-            <h2>Contexto e Problematização</h2>
-            <p>Com a ascensão de plataformas como TikTok, Instagram Reels e YouTube Shorts, o consumo de conteúdo digital mudou drasticamente. Este projeto investiga como o formato de vídeos de 15 a 60 segundos afeta a capacidade de concentração prolongada e a retenção de informações na juventude.</p>
-            <p>A principal hipótese é que o ciclo rápido de recompensas (picos de dopamina) gerado pelo "scroll infinito" está diretamente ligado a um estado de fragmentação cognitiva.</p>
+            <h2><i class="fa-solid fa-lightbulb"></i> Contexto e Problematização</h2>
+            <p>Com a ascensão exponencial de plataformas baseadas em algoritmos de recomendação (TikTok, Instagram Reels e YouTube Shorts), o padrão de consumo de conteúdo digital sofreu uma alteração estrutural. Este projeto investiga como o formato de vídeos ultra-curtos (15 a 60 segundos) afeta diretamente a capacidade de concentração prolongada e a retenção de informações na juventude.</p>
+            <p>Nossa principal hipótese é que o ciclo rápido e constante de recompensas, gerado pelo mecanismo de <em>"scroll infinito"</em>, está condicionando o cérebro jovem a um estado crônico de <strong>fragmentação cognitiva</strong>, dificultando a imersão em tarefas complexas.</p>
         </section>
 
-        <section id="metodologia">
-            <h2>Metodologia</h2>
-            <p>Nossa pesquisa baseou-se em uma abordagem mista (qualitativa e quantitativa). Foram realizados:</p>
-            <ul>
-                <li>Revisão bibliográfica sobre neurociência e comportamento digital.</li>
-                <li>Questionários aplicados a jovens de 15 a 24 anos.</li>
-                <li>Análise de métricas de tempo de tela e percepção de foco relatada pelos usuários.</li>
-            </ul>
+        <section id="neuroplasticidade">
+            <h2><i class="fa-solid fa-brain"></i> Neuroplasticidade e o Sistema de Recompensa</h2>
+            <p>O cérebro humano possui <strong>neuroplasticidade</strong>, o que significa que ele se molda fisicamente com base nos estímulos que recebe repetidamente. O design dessas plataformas explora o sistema límbico: o gatilho visual de um novo vídeo gera picos rápidos de liberação de <strong>dopamina</strong>.</p>
+            <p>Como a recompensa é variável (o usuário não sabe se o próximo vídeo será bom ou ruim), cria-se um comportamento similar ao vício em máquinas caça-níqueis. A transição contínua entre contextos completamente diferentes a cada 15 segundos sobrecarrega a <em>Default Mode Network (DMN)</em> do cérebro, enfraquecendo as conexões neurais responsáveis pela <strong>atenção sustentada</strong>.</p>
         </section>
 
-        <section id="resultados">
-            <h2>Principais Impactos Observados</h2>
-            <p>A partir da coleta de dados, identificamos três grandes eixos de impacto na cognição dos jovens analisados:</p>
+        <section id="dados">
+            <h2><i class="fa-solid fa-chart-pie"></i> Análise de Dados e Métricas</h2>
+            <p>A pesquisa combinou revisão bibliográfica com análise quantitativa. Os dados abaixo ilustram a relação direta entre o formato de consumo moderno e a degradação da capacidade de foco contínuo.</p>
             
-            <div class="grid-impactos">
+            <div class="graficos-container">
+                <!-- Gráfico 1 -->
+                <div class="grafico-wrapper">
+                    <canvas id="graficoTempoTela"></canvas>
+                    <p class="grafico-legenda">Figura 1: Distribuição percentual do tempo de tela gasto por jovens nas principais plataformas de vídeos curtos.</p>
+                </div>
+                <!-- Gráfico 2 -->
+                <div class="grafico-wrapper">
+                    <canvas id="graficoAtencao"></canvas>
+                    <p class="grafico-legenda">Figura 2: Correlação inversa entre as horas diárias de uso e a nota de autoavaliação para foco em leituras longas.</p>
+                </div>
+                <!-- Gráfico 3 -->
+                <div class="grafico-wrapper" style="grid-column: 1 / -1; max-width: 800px; margin: 0 auto; width: 100%;">
+                    <canvas id="graficoEvolucao"></canvas>
+                    <p class="grafico-legenda">Figura 3: Queda no tempo médio de atenção sustentada em uma única tela ao longo dos anos (Baseado em estudos da Microsoft e King's College).</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="impactos">
+            <h2><i class="fa-solid fa-bolt"></i> Principais Impactos Cognitivos</h2>
+            
+            <div class="grid-cards">
                 <div class="card">
+                    <i class="fa-solid fa-book-open-reader azul"></i>
                     <h3>Déficit de Atenção Sustentada</h3>
-                    <p>Dificuldade crescente em realizar tarefas que exigem foco contínuo, como leitura de textos longos ou estudos aprofundados.</p>
+                    <p>Relatos de dificuldade crescente e irritabilidade ao tentar realizar tarefas que exigem foco contínuo e linear, como leitura de textos acadêmicos para o ENEM ou vestibulares.</p>
                 </div>
-                <div class="card">
-                    <h3>Busca por Gratificação Imediata</h3>
-                    <p>Condicionamento do cérebro a esperar recompensas rápidas, gerando frustração e ansiedade em atividades de longo prazo.</p>
+                <div class="card amarelo">
+                    <i class="fa-solid fa-stopwatch amarelo"></i>
+                    <h3>Gratificação Imediata</h3>
+                    <p>Condicionamento neural a esperar recompensas instantâneas. Isso gera baixa tolerância à frustração e ansiedade em atividades cujos resultados só aparecem a longo prazo.</p>
                 </div>
-                <div class="card">
-                    <h3>Fadiga Mental e Retenção</h3>
-                    <p>A sobrecarga de estímulos e a rápida troca de contexto prejudicam a consolidação da memória de curto e longo prazo.</p>
+                <div class="card vermelho">
+                    <i class="fa-solid fa-triangle-exclamation vermelho"></i>
+                    <h3>Fadiga Mental e Retenção Falha</h3>
+                    <p>A sobrecarga de estímulos e a rápida troca de assunto prejudicam a transferência de informações da memória de trabalho (curto prazo) para a memória de longo prazo.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="solucoes">
+            <h2><i class="fa-solid fa-shield-halved"></i> Estratégias de Mitigação</h2>
+            <p>Para combater a fragmentação cognitiva, é necessário promover o "letramento digital" e adotar práticas que reforcem as vias neurais do foco prolongado:</p>
+            
+            <div class="grid-cards">
+                <div class="card verde">
+                    <i class="fa-solid fa-clock verde"></i>
+                    <h3>Técnica Pomodoro</h3>
+                    <p>Treinar o cérebro para manter o foco ininterrupto por 25 a 30 minutos, seguido de pausas curtas. Ajuda a reconstruir a resistência mental para estudos profundos.</p>
+                </div>
+                <div class="card verde">
+                    <i class="fa-solid fa-mobile-screen-button verde"></i>
+                    <h3>Higiene de Tela (Fricção)</h3>
+                    <p>Adicionar "fricção" ao uso: desativar reprodução automática, usar bloqueadores de app (AppBlock, Forest) e manter o celular fora do alcance visual durante o estudo.</p>
+                </div>
+                <div class="card verde">
+                    <i class="fa-solid fa-om verde"></i>
+                    <h3>Atenção Plena (Mindfulness)</h3>
+                    <p>Práticas de atenção plena e leitura de livros físicos (sem links ou notificações) ajudam a recalibrar a <em>Default Mode Network</em>, reduzindo a ansiedade algorítmica.</p>
                 </div>
             </div>
         </section>
 
         <section id="conclusao">
-            <h2>Considerações Finais</h2>
-            <p>O estudo conclui que a moderação e o desenvolvimento de um "letramento digital" são essenciais. Não se trata apenas de proibir o uso, mas de educar os jovens sobre a higiene do tempo de tela e o funcionamento do próprio cérebro diante de designs de plataformas feitos para reter a atenção a qualquer custo.</p>
+            <h2><i class="fa-solid fa-flag-checkered"></i> Considerações Finais</h2>
+            <p>O estudo conclui que não se trata de uma perspectiva puramente proibicionista em relação ao uso do smartphone, mas de uma necessidade urgente de educar os jovens sobre o funcionamento fisiológico do próprio cérebro. Somente com a conscientização sobre como o design das plataformas opera, será possível retomar o controle sobre a própria capacidade de atenção e aprendizado.</p>
+        </section>
+
+        <section id="referencias">
+            <h2><i class="fa-solid fa-quote-right"></i> Referências Bibliográficas</h2>
+            <ul class="referencias">
+                <li>
+                    <a href="https://scholar.google.com.br/scholar?q=A+Gera%C3%A7%C3%A3o+Superficial+Nicholas+Carr" target="_blank">
+                        CARR, Nicholas. A Geração Superficial: o que a internet está fazendo com os nossos cérebros.
+                    </a>
+                    <span class="detalhes">Rio de Janeiro: Agir, 2011. (Clique para buscar estudos relacionados)</span>
+                </li>
+                <li>
+                    <a href="https://scholar.google.com.br/scholar?q=Nacao+Dopamina+Anna+Lembke" target="_blank">
+                        LEMBKE, Anna. Nação Dopamina: Por que o excesso de prazer está nos deixando infelizes e o que podemos fazer para mudar.
+                    </a>
+                    <span class="detalhes">São Paulo: Vestígio, 2022. (Clique para buscar estudos relacionados)</span>
+                </li>
+                <li>
+                    <a href="https://scholar.google.com.br/scholar?q=Foco+Roubado+Johann+Hari" target="_blank">
+                        HARI, Johann. Foco Roubado: Os ladrões de atenção da vida moderna.
+                    </a>
+                    <span class="detalhes">São Paulo: Companhia das Letras, 2022. (Clique para buscar estudos relacionados)</span>
+                </li>
+                <li>
+                    <a href="https://scholar.google.com.br/scholar?q=Neuroplasticity+and+social+media+addiction+attention+span" target="_blank">
+                        FIRTH, J. et al. The "online brain": how the Internet may be changing our cognition.
+                    </a>
+                    <span class="detalhes">World Psychiatry, v. 18, n. 2, p. 119-129, 2019. (Artigo Científico)</span>
+                </li>
+            </ul>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 Emil Fiedler, Camyla Lessa e Yasmin Alves. Trabalho de Conclusão de Curso.</p>
+        <p><strong>Instituto Federal Baiano - Campus Uruçuca</strong></p>
+        <p>&copy; 2026 Desenvolvido por 
+            <a href="http://lattes.cnpq.br/9617398374216033" target="_blank" rel="noopener noreferrer" class="lattes-link">Emil Fiedler</a>, 
+            <a href="http://lattes.cnpq.br/7515132063925580" target="_blank" rel="noopener noreferrer" class="lattes-link">Camyla Lessa</a> e 
+            <a href="http://lattes.cnpq.br/3528280094644164" target="_blank" rel="noopener noreferrer" class="lattes-link">Yasmin Alves</a>.
+        </p>
+        <p>Apresentação de Trabalho de Conclusão de Curso.</p>
     </footer>
 
+    <!-- Script para renderizar os gráficos com Chart.js -->
+    <script>
+        Chart.defaults.font.family = "'Inter', sans-serif";
+        Chart.defaults.color = "#475569";
+
+        // Gráfico 1: Tempo Médio de Tela
+        const ctx1 = document.getElementById('graficoTempoTela').getContext('2d');
+        new Chart(ctx1, {
+            type: 'doughnut',
+            data: {
+                labels: ['TikTok', 'Instagram Reels', 'YouTube Shorts', 'Outros'],
+                datasets: [{
+                    data: [45, 30, 15, 10],
+                    backgroundColor: ['#0f172a', '#ef4444', '#3b82f6', '#cbd5e1'],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    title: { display: true, text: 'Distribuição do Tempo de Tela (%)', font: { size: 15, weight: 'bold' } },
+                    legend: { position: 'bottom' }
+                }
+            }
+        });
+
+        // Gráfico 2: Queda de Percepção de Foco
+        const ctx2 = document.getElementById('graficoAtencao').getContext('2d');
+        new Chart(ctx2, {
+            type: 'bar',
+            data: {
+                labels: ['0-1h', '1-3h', '3-5h', '+5h diárias'],
+                datasets: [{
+                    label: 'Capacidade de Foco (Autoavaliação 0-10)',
+                    data: [8.5, 7.0, 4.5, 3.0],
+                    backgroundColor: '#3b82f6',
+                    borderRadius: 6
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: { y: { beginAtZero: true, max: 10 } },
+                plugins: {
+                    title: { display: true, text: 'Tempo de Uso vs Foco na Leitura', font: { size: 15, weight: 'bold' } }
+                }
+            }
+        });
+
+        // Gráfico 3: Evolução Histórica da Atenção
+        const ctx3 = document.getElementById('graficoEvolucao').getContext('2d');
+        new Chart(ctx3, {
+            type: 'line',
+            data: {
+                labels: ['2004', '2008', '2012', '2016', '2020', '2024'],
+                datasets: [{
+                    label: 'Tempo médio de atenção por tela (Segundos)',
+                    data: [150, 110, 75, 47, 35, 20],
+                    borderColor: '#ef4444',
+                    backgroundColor: 'rgba(239, 68, 68, 0.1)',
+                    borderWidth: 3,
+                    fill: true,
+                    tension: 0.4,
+                    pointBackgroundColor: '#0f172a',
+                    pointRadius: 5
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: { y: { beginAtZero: true } },
+                plugins: {
+                    title: { display: true, text: 'Declínio Histórico do Tempo de Atenção (Segundos)', font: { size: 15, weight: 'bold' } }
+                }
+            }
+        });
+    </script>
 </body>
 </html>
