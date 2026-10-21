@@ -3,27 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apresentação TCC - Fragmentação Cognitiva</title>
+    <title>Impactos do Consumo Excessivo de Vídeos Curtos na Fragmentação Cognitiva dos Jovens</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- FontAwesome para Ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Chart.js para Gráficos -->
+    <!-- Chart.js para Renderização Dinâmica e Gráficos Interativos -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <style>
         :root {
             --cor-primaria: #0f172a; /* Slate 900 */
-            --cor-secundaria: #3b82f6; /* Blue 500 */
-            --cor-destaque: #ef4444; /* Red 500 */
+            --cor-secundaria: #2563eb; /* Blue 600 */
+            --cor-destaque: #dc2626; /* Red 600 */
             --cor-fundo: #f8fafc; /* Slate 50 */
             --cor-texto: #334155; /* Slate 700 */
             --cor-card: #ffffff;
+            --cor-borda: #e2e8f0;
+            --cor-sucesso: #059669; /* Emerald 600 */
         }
 
         * {
@@ -35,38 +37,43 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            line-height: 1.7;
+            line-height: 1.8;
             color: var(--cor-texto);
             background-color: var(--cor-fundo);
         }
 
-        /* Navbar */
+        /* Navbar Moderna */
         nav {
-            background-color: rgba(15, 23, 42, 0.95);
-            backdrop-filter: blur(10px);
+            background-color: rgba(15, 23, 42, 0.92);
+            backdrop-filter: blur(12px);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            padding: 1rem 2rem;
+            padding: 0.9rem 2rem;
             display: flex;
             justify-content: center;
             gap: 1.5rem;
             flex-wrap: wrap;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
 
         nav a {
-            color: white;
+            color: #cbd5e1;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.82rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: color 0.3s;
+            letter-spacing: 1.2px;
+            transition: all 0.3s ease;
+            padding: 4px 8px;
+            border-radius: 4px;
         }
 
         nav a:hover {
-            color: var(--cor-secundaria);
+            color: #ffffff;
+            background-color: rgba(59, 130, 246, 0.2);
         }
 
         /* Hero Section */
@@ -74,91 +81,128 @@
             background: linear-gradient(135deg, var(--cor-primaria) 0%, #1e293b 100%);
             color: white;
             text-align: center;
-            padding: 9rem 1rem 6rem 1rem;
-            clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+            padding: 10rem 1.5rem 7rem 1.5rem;
+            clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
+            box-shadow: inset 0 -20px 30px rgba(0,0,0,0.2);
         }
 
         .instituicao {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--cor-secundaria);
-            margin-bottom: 1rem;
+            letter-spacing: 3px;
+            color: #60a5fa;
+            margin-bottom: 1.2rem;
             display: block;
+            font-weight: 600;
         }
 
         header h1 {
             font-size: 2.8rem;
             font-weight: 800;
-            max-width: 1000px;
+            max-width: 1050px;
             margin: 0 auto;
-            line-height: 1.2;
-            text-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            line-height: 1.25;
+            letter-spacing: -0.5px;
+            text-shadow: 0 4px 12px rgba(0,0,0,0.2);
         }
 
         .subtitulo {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             color: #94a3b8;
             margin-top: 1.5rem;
             font-weight: 300;
         }
 
         .autores {
-            margin-top: 3rem;
+            margin-top: 2.8rem;
             display: inline-flex;
-            gap: 2rem;
-            background: rgba(255,255,255,0.1);
-            padding: 1rem 2rem;
+            gap: 1.5rem;
+            background: rgba(255, 255, 255, 0.06);
+            padding: 0.8rem 1.8rem;
             border-radius: 50px;
-            backdrop-filter: blur(5px);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             flex-wrap: wrap;
             justify-content: center;
         }
 
         .autores a {
-            color: white;
+            color: #f8fafc;
             text-decoration: none;
             font-weight: 600;
+            font-size: 0.92rem;
             display: flex;
             align-items: center;
             gap: 8px;
-            transition: color 0.3s;
+            transition: all 0.3s ease;
+            padding: 6px 14px;
+            border-radius: 20px;
         }
 
         .autores a:hover {
-            color: var(--cor-secundaria);
+            color: #ffffff;
+            background-color: var(--cor-secundaria);
+            box-shadow: 0 0 15px rgba(37, 99, 235, 0.5);
+            transform: translateY(-2px);
+        }
+
+        /* Botão do PDF */
+        .btn-pdf {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: #dc2626;
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-top: 2rem;
+            box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .btn-pdf:hover {
+            background-color: #b91c1c;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(220, 38, 38, 0.5);
+            color: white;
         }
 
         /* Container Principal */
         main {
             max-width: 1100px;
-            margin: 0 auto;
-            padding: 2rem 1.5rem;
+            margin: -2rem auto 0 auto;
+            padding: 0 1.5rem;
+            position: relative;
+            z-index: 10;
         }
 
         section {
             background: var(--cor-card);
-            padding: 3rem;
-            margin-bottom: 3rem;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-            border: 1px solid rgba(0,0,0,0.05);
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeIn 0.8s forwards;
-        }
-
-        @keyframes fadeIn {
-            to { opacity: 1; transform: translateY(0); }
+            padding: 3.5rem;
+            margin-bottom: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+            border: 1px solid var(--cor-borda);
+            transition: transform 0.3s ease;
         }
 
         h2 {
             color: var(--cor-primaria);
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
+            font-size: 1.85rem;
+            margin-bottom: 1.8rem;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 14px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        h2 i {
+            color: var(--cor-secundaria);
         }
 
         h2::after {
@@ -167,134 +211,309 @@
             height: 2px;
             background: linear-gradient(to right, var(--cor-secundaria), transparent);
             margin-left: 15px;
+            opacity: 0.3;
         }
 
         h3 {
             color: var(--cor-primaria);
             font-size: 1.3rem;
-            margin: 1.5rem 0 0.5rem 0;
+            margin: 2rem 0 1rem 0;
+            font-weight: 600;
         }
 
         p {
-            margin-bottom: 1.2rem;
+            margin-bottom: 1.3rem;
             text-align: justify;
             font-size: 1.05rem;
+            color: #475569;
         }
 
-        /* Grid de Cards (Impactos e Soluções) */
-        .grid-cards {
+        /* Destaques conceituais */
+        .destaque-box {
+            background: #eff6ff;
+            border-left: 5px solid var(--cor-secundaria);
+            padding: 1.5rem 1.8rem;
+            border-radius: 0 12px 12px 0;
+            margin: 1.8rem 0;
+            font-style: italic;
+            color: #1e3a8a;
+        }
+
+        /* Grid de Gráficos Dinâmicos */
+        .graficos-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
             margin-top: 2rem;
         }
 
-        .card {
-            background: var(--cor-fundo);
-            padding: 2rem;
-            border-radius: 12px;
-            border-top: 4px solid var(--cor-secundaria);
+        .grafico-card {
+            background: #f8fafc;
+            padding: 2.2rem;
+            border-radius: 16px;
+            border: 1px solid var(--cor-borda);
             transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
         }
 
-        .card.amarelo { border-color: #f59e0b; }
-        .card.vermelho { border-color: var(--cor-destaque); }
-        .card.verde { border-color: #10b981; }
-
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        .grafico-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.06);
+            border-color: #cbd5e1;
         }
 
-        .card i {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+        .grafico-card h3 {
+            color: var(--cor-primaria);
+            font-size: 1.25rem;
+            margin-bottom: 1.2rem;
+            text-align: center;
         }
 
-        .card i.azul { color: var(--cor-secundaria); }
-        .card i.amarelo { color: #f59e0b; }
-        .card i.vermelho { color: var(--cor-destaque); }
-        .card i.verde { color: #10b981; }
-
-        /* Gráficos */
-        .graficos-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .grafico-wrapper {
-            background: var(--cor-fundo);
-            padding: 1.5rem;
-            border-radius: 12px;
-            border: 1px solid #e2e8f0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+        .chart-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 750px;
+            margin: 0 auto;
+            min-height: 330px;
         }
 
         .grafico-legenda {
-            text-align: center;
-            font-size: 0.9rem;
-            color: #64748b;
-            margin-top: 1rem;
+            text-align: left;
+            font-size: 0.92rem;
+            color: #475569;
+            margin-top: 1.5rem;
             font-style: italic;
+            background: #ffffff;
+            padding: 14px 20px;
+            border-left: 4px solid var(--cor-secundaria);
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+            border: 1px solid var(--cor-borda);
         }
 
-        /* Referências com Links */
+        /* Área Interativa da Plataforma */
+        .app-container {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 18px;
+            padding: 2.5rem;
+            margin-top: 1.8rem;
+            box-shadow: inset 0 2px 6px rgba(0,0,0,0.02);
+        }
+
+        .pergunta-group {
+            background: white;
+            padding: 1.8rem;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            border: 1px solid var(--cor-borda);
+        }
+
+        .pergunta-group label {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 0.9rem;
+            color: var(--cor-primaria);
+            font-size: 1.05rem;
+        }
+
+        .pergunta-group select {
+            width: 100%;
+            padding: 0.9rem 1rem;
+            border-radius: 8px;
+            border: 1px solid #cbd5e1;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            background-color: #f8fafc;
+            color: var(--cor-texto);
+            transition: border-color 0.2s;
+        }
+
+        .pergunta-group select:focus {
+            outline: none;
+            border-color: var(--cor-secundaria);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+        }
+
+        .btn-acao {
+            background-color: var(--cor-secundaria);
+            color: white;
+            font-weight: 700;
+            padding: 1.1rem 2rem;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-acao:hover {
+            background-color: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+        }
+
+        .painel-resultados {
+            display: none;
+            margin-top: 2.5rem;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Card de Diagnóstico Dinâmico */
+        .card-diagnostico {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 14px;
+            margin-bottom: 2rem;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+            border-left: 6px solid #cbd5e1;
+            border: 1px solid var(--cor-borda);
+            transition: all 0.3s ease;
+        }
+
+        .card-diagnostico.risco-baixo {
+            border-left-color: var(--cor-sucesso);
+            background-color: #ecfdf5;
+        }
+        .card-diagnostico.risco-baixo h4 {
+            color: #047857;
+        }
+
+        .card-diagnostico.risco-moderado {
+            border-left-color: #d97706;
+            background-color: #fffbeb;
+        }
+        .card-diagnostico.risco-moderado h4 {
+            color: #b45309;
+        }
+
+        .card-diagnostico.risco-alto {
+            border-left-color: var(--cor-destaque);
+            background-color: #fef2f2;
+        }
+        .card-diagnostico.risco-alto h4 {
+            color: var(--cor-destaque);
+        }
+
+        .card-diagnostico h4 {
+            font-size: 1.35rem;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .lista-problemas {
+            margin-left: 1.4rem;
+            margin-bottom: 1.2rem;
+            color: #334155;
+        }
+
+        .lista-problemas li {
+            margin-bottom: 0.5rem;
+        }
+
+        .painel-tarefas {
+            background: white;
+            border-radius: 14px;
+            padding: 2rem;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+            border: 1px solid var(--cor-borda);
+        }
+
+        .tarefa-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #f8fafc;
+            padding: 1.1rem 1.4rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            border: 1px solid var(--cor-borda);
+            transition: all 0.2s;
+        }
+
+        .tarefa-item.concluida {
+            background: #ecfdf5;
+            border-color: #a7f3d0;
+            text-decoration: line-through;
+            opacity: 0.75;
+        }
+
+        .tarefa-texto {
+            font-weight: 500;
+            font-size: 1rem;
+            color: #1e293b;
+        }
+
+        .btn-check {
+            background: #e2e8f0;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            color: #475569;
+            transition: all 0.2s;
+            font-size: 0.9rem;
+        }
+
+        .btn-check:hover {
+            background: #cbd5e1;
+        }
+
+        .tarefa-item.concluida .btn-check {
+            background: var(--cor-sucesso);
+            color: white;
+        }
+
+        /* Referências Oficiais do TCC (Sem Links) */
         .referencias {
             list-style: none;
         }
 
         .referencias li {
-            margin-bottom: 1.5rem;
-            padding-left: 2rem;
-            position: relative;
-            background: var(--cor-fundo);
-            padding: 1.5rem 1.5rem 1.5rem 3.5rem;
-            border-radius: 8px;
+            margin-bottom: 1.6rem;
+            background: #f8fafc;
+            padding: 1.3rem 1.3rem 1.3rem 3.2rem;
+            border-radius: 10px;
             border-left: 4px solid var(--cor-secundaria);
+            position: relative;
+            border: 1px solid var(--cor-borda);
+            border-left-width: 4px;
+            font-size: 0.98rem;
         }
 
         .referencias li::before {
-            content: '\f0c1'; /* Ícone de link do FontAwesome */
+            content: '\f02d';
             font-family: 'Font Awesome 6 Free';
             font-weight: 900;
             position: absolute;
             left: 1.2rem;
             color: var(--cor-secundaria);
-            top: 1.6rem;
+            top: 1.4rem;
         }
 
-        .referencias a {
+        .referencias strong {
             color: var(--cor-primaria);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.2s;
-            display: inline-block;
         }
 
-        .referencias a:hover {
-            color: var(--cor-secundaria);
-            text-decoration: underline;
-        }
-
-        .referencias span.detalhes {
-            display: block;
-            font-size: 0.9rem;
-            color: #64748b;
-            margin-top: 0.3rem;
-            font-weight: 400;
-        }
-
-        /* Rodapé */
+        /* Rodapé Institucional */
         footer {
             text-align: center;
-            padding: 3rem 1rem;
+            padding: 4rem 1.5rem;
             background: var(--cor-primaria);
             color: #94a3b8;
-            margin-top: 4rem;
+            margin-top: 5rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
         }
 
         footer strong { color: white; }
@@ -306,17 +525,18 @@
         }
 
         footer a.lattes-link:hover {
-            color: var(--cor-secundaria);
+            color: #60a5fa;
             text-decoration: underline;
         }
 
-        /* Responsividade */
         @media (max-width: 768px) {
-            header h1 { font-size: 2.2rem; }
-            .graficos-container { grid-template-columns: 1fr; }
-            nav { padding: 0.5rem; }
-            nav a { font-size: 0.8rem; }
-            h2 { font-size: 1.6rem; }
+            header h1 { font-size: 2.1rem; }
+            .autores { flex-direction: column; gap: 0.8rem; }
+            nav { padding: 0.6rem; }
+            nav a { font-size: 0.75rem; }
+            section { padding: 2rem 1.2rem; }
+            .tarefa-item { flex-direction: column; align-items: flex-start; gap: 0.8rem; }
+            .btn-check { width: 100%; }
         }
     </style>
 </head>
@@ -324,231 +544,518 @@
 
     <nav>
         <a href="#introducao">Introdução</a>
-        <a href="#neuroplasticidade">Neuroplasticidade</a>
-        <a href="#dados">Dados & Gráficos</a>
-        <a href="#impactos">Impactos</a>
-        <a href="#solucoes">Soluções</a>
+        <a href="#teoria">Fundamentação</a>
+        <a href="#metodologia">Metodologia</a>
+        <a href="#resultados">Resultados (89 Amostras)</a>
+        <a href="#pratica">Plataforma Interativa</a>
         <a href="#referencias">Referências</a>
     </nav>
 
     <header>
-        <span class="instituicao">Instituto Federal Baiano - Campus Uruçuca</span>
+        <span class="instituicao">Instituto Federal de Educação, Ciência e Tecnologia Baiano - Campus Uruçuca</span>
         <h1>Impactos do Consumo Excessivo de Vídeos Curtos na Fragmentação Cognitiva dos Jovens</h1>
-        <p class="subtitulo">Apresentação de Trabalho de Conclusão de Curso (TCC)</p>
+        <p class="subtitulo">Trabalho de Conclusão de Curso (TCC) apresentado ao Curso Técnico em Informática Integrado ao Ensino Médio</p>
+        
         <div class="autores">
             <a href="http://lattes.cnpq.br/9617398374216033" target="_blank" rel="noopener noreferrer">
-                <i class="fa-solid fa-user"></i> Emil Fiedler
+                <i class="fa-solid fa-user-graduate"></i> Emil Fiedler Freitas
             </a>
             <a href="http://lattes.cnpq.br/7515132063925580" target="_blank" rel="noopener noreferrer">
-                <i class="fa-solid fa-user"></i> Camyla Lessa
+                <i class="fa-solid fa-user-graduate"></i> Camyla Lessa
             </a>
             <a href="http://lattes.cnpq.br/3528280094644164" target="_blank" rel="noopener noreferrer">
-                <i class="fa-solid fa-user"></i> Yasmin Alves
+                <i class="fa-solid fa-user-graduate"></i> Yasmin Alves
+            </a>
+        </div>
+
+        <div>
+            <a href="Tcc (2).pdf" target="_blank" class="btn-pdf">
+                <i class="fa-solid fa-file-pdf"></i> Acessar Documento Oficial do TCC (PDF)
             </a>
         </div>
     </header>
 
     <main>
+        <!-- INTRODUÇÃO -->
         <section id="introducao">
-            <h2><i class="fa-solid fa-lightbulb"></i> Contexto e Problematização</h2>
-            <p>Com a ascensão exponencial de plataformas baseadas em algoritmos de recomendação (TikTok, Instagram Reels e YouTube Shorts), o padrão de consumo de conteúdo digital sofreu uma alteração estrutural. Este projeto investiga como o formato de vídeos ultra-curtos (15 a 60 segundos) afeta diretamente a capacidade de concentração prolongada e a retenção de informações na juventude.</p>
-            <p>Nossa principal hipótese é que o ciclo rápido e constante de recompensas, gerado pelo mecanismo de <em>"scroll infinito"</em>, está condicionando o cérebro jovem a um estado crônico de <strong>fragmentação cognitiva</strong>, dificultando a imersão em tarefas complexas.</p>
-        </section>
-
-        <section id="neuroplasticidade">
-            <h2><i class="fa-solid fa-brain"></i> Neuroplasticidade e o Sistema de Recompensa</h2>
-            <p>O cérebro humano possui <strong>neuroplasticidade</strong>, o que significa que ele se molda fisicamente com base nos estímulos que recebe repetidamente. O design dessas plataformas explora o sistema límbico: o gatilho visual de um novo vídeo gera picos rápidos de liberação de <strong>dopamina</strong>.</p>
-            <p>Como a recompensa é variável (o usuário não sabe se o próximo vídeo será bom ou ruim), cria-se um comportamento similar ao vício em máquinas caça-níqueis. A transição contínua entre contextos completamente diferentes a cada 15 segundos sobrecarrega a <em>Default Mode Network (DMN)</em> do cérebro, enfraquecendo as conexões neurais responsáveis pela <strong>atenção sustentada</strong>.</p>
-        </section>
-
-        <section id="dados">
-            <h2><i class="fa-solid fa-chart-pie"></i> Análise de Dados e Métricas</h2>
-            <p>A pesquisa combinou revisão bibliográfica com análise quantitativa. Os dados abaixo ilustram a relação direta entre o formato de consumo moderno e a degradação da capacidade de foco contínuo.</p>
+            <h2><i class="fa-solid fa-book-open-reader"></i> Contextualização e Problematização</h2>
+            <p>Nos últimos anos, a expansão e o avanço contínuo das tecnologias digitais transformaram profundamente os padrões de consumo de informação e entretenimento, especialmente entre o público jovem. A ascensão de plataformas baseadas na distribuição de vídeos curtos como TikTok, Instagram Reels e YouTube Shorts popularizou um formato de mídia caracterizado por conteúdos de curta duração, que oferecem um fluxo contínuo e acelerado de estímulos visuais e auditivos.</p>
+            <p>Apesar do entretenimento, a exposição frequente a esses estímulos virtuais desperta crescentes preocupações neurocognitivas. O consumo contínuo ativa intensamente o sistema de recompensa cerebral, promovendo descargas frequentes de dopamina. Consolida-se assim o fenômeno da <strong>fragmentação cognitiva</strong>: a dificuldade em manter a atenção contínua em uma única atividade, acompanhada por redução na memória de trabalho e estado de atenção parcial constante.</p>
             
-            <div class="graficos-container">
-                <!-- Gráfico 1 -->
-                <div class="grafico-wrapper">
-                    <canvas id="graficoTempoTela"></canvas>
-                    <p class="grafico-legenda">Figura 1: Distribuição percentual do tempo de tela gasto por jovens nas principais plataformas de vídeos curtos.</p>
+            <div class="destaque-box">
+                "De que maneira o consumo excessivo de vídeos curtos influencia a fragmentação cognitiva dos jovens e como o desenvolvimento de uma plataforma digital interativa pode auxiliar na conscientização e promoção de hábitos tecnológicos mais saudáveis?"
+            </div>
+        </section>
+
+        <!-- FUNDAMENTAÇÃO TEÓRICA -->
+        <section id="teoria">
+            <h2><i class="fa-solid fa-brain"></i> Fundamentação Teórica</h2>
+            <h3>O Avanço das Mídias Digitais e o Formato de Vídeos Curtos</h3>
+            <p>O formato de vídeos curtos com alta densidade de estímulos visuais e auditivos foi desenhado por algoritmos de recomendação altamente personalizados para maximizar o tempo de retenção. De acordo com a literatura, o fluxo contínuo elimina pausas naturais de reflexão, estimulando navegação passiva e automática em adolescentes e jovens.</p>
+
+            <h3>Mecanismos Neurobiológicos: Dopamina e Recompensa</h3>
+            <p>A dopamina regula humor, motivação e o sistema de recompensa cerebral. Plataformas de vídeos curtos exploram esse circuito por meio de recompensa variável e imediata a cada rolagem de tela, gerando descargas dopaminérgicas imprevisíveis. A exposição crônica gera tolerância neurobiológica: o cérebro passa a exigir estímulos cada vez mais rápidos, desestimulando o engajamento em leituras e estudos acadêmicos.</p>
+
+            <h3>Intervenções Tecnológicas e Bem-Estar Digital</h3>
+            <p>Enquanto ferramentas nativas de limitação de tela mostram-se passivas e facilmente burláveis, o desenvolvimento de aplicações web interativas voltadas ao letramento digital atua como um recurso didático poderoso para estimular a autorregulação e a reflexão crítica.</p>
+        </section>
+
+        <!-- PROCEDIMENTOS METODOLÓGICOS -->
+        <section id="metodologia">
+            <h2><i class="fa-solid fa-gears"></i> Procedimentos Metodológicos</h2>
+            <p>A pesquisa classifica-se quanto à natureza como <strong>aplicada</strong>, gerando conhecimentos práticos voltados à solução de um problema contemporâneo. Quanto aos objetivos, é <strong>exploratória e descritiva</strong>, unindo uma abordagem <strong>quali-quantitativa</strong>:</p>
+            <p>• <strong>Etapa Qualitativa:</strong> Fundamentada em revisão bibliográfica sistemática sobre neurociência, cognição, dopamina e dependência digital.</p>
+            <p>• <strong>Etapa Quantitativa:</strong> Coleta de dados primários obtidos através de questionários estruturados embarcados na aplicação web com <strong>89 participantes voluntários (N = 89)</strong>.</p>
+        </section>
+
+        <!-- DISCUSSÃO DOS RESULTADOS -->
+        <section id="resultados">
+            <h2><i class="fa-solid fa-chart-pie"></i> Discussão dos Resultados (89 Amostras)</h2>
+            
+            <p><strong>Os dados abaixo representam os resultados consolidados da pesquisa de campo realizada com 89 participantes voluntários (N = 89). A análise evidencia a relação direta entre o tempo diário de exposição aos vídeos curtos, o rendimento acadêmico e os prejuízos na qualidade do sono da juventude.</strong></p>
+
+            <div class="graficos-grid">
+                <!-- Gráfico 1: Perfil Demográfico -->
+                <div class="grafico-card">
+                    <h3>Perfil Demográfico: Faixa Etária dos Participantes</h3>
+                    <div class="chart-wrapper">
+                        <canvas id="chartIdade"></canvas>
+                    </div>
+                    <div class="grafico-legenda">
+                        <strong>Figura 1:</strong> Distribuição percentual da faixa etária da amostra (N = 89), evidenciando a predominância de jovens entre 15 e 20 anos (77,6%).
+                    </div>
                 </div>
-                <!-- Gráfico 2 -->
-                <div class="grafico-wrapper">
-                    <canvas id="graficoAtencao"></canvas>
-                    <p class="grafico-legenda">Figura 2: Correlação inversa entre as horas diárias de uso e a nota de autoavaliação para foco em leituras longas.</p>
+
+                <!-- Gráfico 2: Tempo de Tela por Faixa Etária -->
+                <div class="grafico-card">
+                    <h3>Tempo de Tela em Vídeos Curtos por Faixa Etária</h3>
+                    <div class="chart-wrapper">
+                        <canvas id="chartFaixaEtariaScreen"></canvas>
+                    </div>
+                    <div class="grafico-legenda">
+                        <strong>Figura 1:</strong> Análise cruzada demonstrando a distribuição do tempo diário de consumo de vídeos curtos segmentada por faixa etária entre os 89 participantes da pesquisa.
+                    </div>
                 </div>
-                <!-- Gráfico 3 -->
-                <div class="grafico-wrapper" style="grid-column: 1 / -1; max-width: 800px; margin: 0 auto; width: 100%;">
-                    <canvas id="graficoEvolucao"></canvas>
-                    <p class="grafico-legenda">Figura 3: Queda no tempo médio de atenção sustentada em uma única tela ao longo dos anos (Baseado em estudos da Microsoft e King's College).</p>
+
+                <!-- Gráfico 3: Interferência nos Estudos -->
+                <div class="grafico-card">
+                    <h3>Percepção da Interferência no Desempenho Escolar/Acadêmico</h3>
+                    <div class="chart-wrapper">
+                        <canvas id="chartInterferencia"></canvas>
+                    </div>
+                    <div class="grafico-legenda">
+                        <strong>Figura 2:</strong> Impacto percebido do consumo de vídeos curtos no rendimento dos estudos, onde 68,5% dos respondentes relatam interferência moderada, bastante ou muita em suas atividades.
+                    </div>
+                </div>
+
+                <!-- Gráfico 4: Qualidade do Sono vs Tempo de Tela -->
+                <div class="grafico-card">
+                    <h3>Qualidade do Sono vs. Tempo Diário em Vídeos Curtos</h3>
+                    <div class="chart-wrapper">
+                        <canvas id="chartSonoTempo"></canvas>
+                    </div>
+                    <div class="grafico-legenda">
+                        <strong>Figura 3:</strong> Análise bivariada correlacionando o tempo diário de exposição aos vídeos curtos com a qualidade do sono relatada, evidenciando o declínio na qualidade do descanso em usos acima de 2 horas diárias.
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="impactos">
-            <h2><i class="fa-solid fa-bolt"></i> Principais Impactos Cognitivos</h2>
-            
-            <div class="grid-cards">
-                <div class="card">
-                    <i class="fa-solid fa-book-open-reader azul"></i>
-                    <h3>Déficit de Atenção Sustentada</h3>
-                    <p>Relatos de dificuldade crescente e irritabilidade ao tentar realizar tarefas que exigem foco contínuo e linear, como leitura de textos acadêmicos para o ENEM ou vestibulares.</p>
-                </div>
-                <div class="card amarelo">
-                    <i class="fa-solid fa-stopwatch amarelo"></i>
-                    <h3>Gratificação Imediata</h3>
-                    <p>Condicionamento neural a esperar recompensas instantâneas. Isso gera baixa tolerância à frustração e ansiedade em atividades cujos resultados só aparecem a longo prazo.</p>
-                </div>
-                <div class="card vermelho">
-                    <i class="fa-solid fa-triangle-exclamation vermelho"></i>
-                    <h3>Fadiga Mental e Retenção Falha</h3>
-                    <p>A sobrecarga de estímulos e a rápida troca de assunto prejudicam a transferência de informações da memória de trabalho (curto prazo) para a memória de longo prazo.</p>
+        <!-- SEÇÃO DA PARTE PRÁTICA -->
+        <section id="pratica">
+            <h2><i class="fa-solid fa-laptop-code"></i> Plataforma Interativa: Diagnóstico & Plano Diário</h2>
+            <p>Como intervenção prática proposta neste TCC, desenvolvemos este módulo dinâmico. Responda ao questionário abaixo para receber seu diagnóstico cognitivo. A plataforma gerará <strong>tarefas diárias personalizadas</strong> salvando o seu progresso localmente no seu navegador!</p>
+
+            <div class="app-container">
+                <form id="form-diagnostico">
+                    <div class="pergunta-group">
+                        <label><i class="fa-solid fa-clock"></i> 1. Quanto tempo por dia você passa assistindo a vídeos curtos (TikTok, Reels, Shorts)?</label>
+                        <select id="p1" required>
+                            <option value="1">Menos de 1 hora</option>
+                            <option value="2">Entre 1 e 2 horas</option>
+                            <option value="3">Entre 2 e 4 horas</option>
+                            <option value="4">Mais de 4 horas diárias</option>
+                        </select>
+                    </div>
+
+                    <div class="pergunta-group">
+                        <label><i class="fa-solid fa-book-open"></i> 2. Qual o seu grau de dificuldade ao tentar ler um livro ou texto acadêmico longo sem checar o celular?</label>
+                        <select id="p2" required>
+                            <option value="1">Nenhuma dificuldade (Consigo manter o foco)</option>
+                            <option value="2">Pouca dificuldade (Sinto leve distração)</option>
+                            <option value="3">Dificuldade moderada (Preciso checar a cada 15 min)</option>
+                            <option value="4">Muita dificuldade (Não consigo ler mais de 5 minutos)</option>
+                        </select>
+                    </div>
+
+                    <div class="pergunta-group">
+                        <label><i class="fa-solid fa-moon"></i> 3. Você costuma assistir a vídeos curtos na cama antes de dormir?</label>
+                        <select id="p3" required>
+                            <option value="1">Raramente ou Nunca</option>
+                            <option value="2">Às vezes (Paro 30 min antes de dormir)</option>
+                            <option value="3">Frequentemente (Paro menos de 15 min antes)</option>
+                            <option value="4">Sempre (Durmo com o celular na mão)</option>
+                        </select>
+                    </div>
+
+                    <div class="pergunta-group">
+                        <label><i class="fa-solid fa-rotate"></i> 4. Ao rolar o feed, com que frequência você pula vídeos rapidamente buscando algo "mais interessante"?</label>
+                        <select id="p4" required>
+                            <option value="1">Raramente</option>
+                            <option value="2">Às vezes</option>
+                            <option value="3">Frequentemente</option>
+                            <option value="4">Sempre (Mudo de vídeo em menos de 5 segundos)</option>
+                        </select>
+                    </div>
+
+                    <button type="button" class="btn-acao" onclick="processarDiagnostico()"><i class="fa-solid fa-chart-line"></i> Gerar Meu Diagnóstico e Plano Diário</button>
+                </form>
+
+                <!-- Painel de Resultados exibido após o teste -->
+                <div id="painel-resultados" class="painel-resultados">
+                    <div class="card-diagnostico">
+                        <h4><i class="fa-solid fa-triangle-exclamation"></i> Diagnóstico de Hábitos Cognitivos</h4>
+                        <p id="resumo-nivel" style="font-weight: bold; margin-bottom: 0.5rem;"></p>
+                        <p><strong>Problemas Identificados na sua rotina:</strong></p>
+                        <ul id="lista-problemas" class="lista-problemas"></ul>
+                        <p id="orientacao-geral"></p>
+                    </div>
+
+                    <div class="painel-tarefas">
+                        <h3><i class="fa-solid fa-calendar-check"></i> Suas Tarefas Diárias de Reabilitação Focada</h3>
+                        <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 1.2rem;">Conclua as tarefas abaixo e marque-as como feitas. Amanhã, as tarefas concluídas darão lugar a novos desafios, enquanto as não concluídas permanecerão ativas!</p>
+
+                        <div id="container-tarefas"></div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="solucoes">
-            <h2><i class="fa-solid fa-shield-halved"></i> Estratégias de Mitigação</h2>
-            <p>Para combater a fragmentação cognitiva, é necessário promover o "letramento digital" e adotar práticas que reforcem as vias neurais do foco prolongado:</p>
-            
-            <div class="grid-cards">
-                <div class="card verde">
-                    <i class="fa-solid fa-clock verde"></i>
-                    <h3>Técnica Pomodoro</h3>
-                    <p>Treinar o cérebro para manter o foco ininterrupto por 25 a 30 minutos, seguido de pausas curtas. Ajuda a reconstruir a resistência mental para estudos profundos.</p>
-                </div>
-                <div class="card verde">
-                    <i class="fa-solid fa-mobile-screen-button verde"></i>
-                    <h3>Higiene de Tela (Fricção)</h3>
-                    <p>Adicionar "fricção" ao uso: desativar reprodução automática, usar bloqueadores de app (AppBlock, Forest) e manter o celular fora do alcance visual durante o estudo.</p>
-                </div>
-                <div class="card verde">
-                    <i class="fa-solid fa-om verde"></i>
-                    <h3>Atenção Plena (Mindfulness)</h3>
-                    <p>Práticas de atenção plena e leitura de livros físicos (sem links ou notificações) ajudam a recalibrar a <em>Default Mode Network</em>, reduzindo a ansiedade algorítmica.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="conclusao">
-            <h2><i class="fa-solid fa-flag-checkered"></i> Considerações Finais</h2>
-            <p>O estudo conclui que não se trata de uma perspectiva puramente proibicionista em relação ao uso do smartphone, mas de uma necessidade urgente de educar os jovens sobre o funcionamento fisiológico do próprio cérebro. Somente com a conscientização sobre como o design das plataformas opera, será possível retomar o controle sobre a própria capacidade de atenção e aprendizado.</p>
-        </section>
-
+        <!-- REFERÊNCIAS DO TCC -->
         <section id="referencias">
             <h2><i class="fa-solid fa-quote-right"></i> Referências Bibliográficas</h2>
             <ul class="referencias">
                 <li>
-                    <a href="https://scholar.google.com.br/scholar?q=A+Gera%C3%A7%C3%A3o+Superficial+Nicholas+Carr" target="_blank">
-                        CARR, Nicholas. A Geração Superficial: o que a internet está fazendo com os nossos cérebros.
-                    </a>
-                    <span class="detalhes">Rio de Janeiro: Agir, 2011. (Clique para buscar estudos relacionados)</span>
+                    <strong>BORLADO, M.</strong> O impacto das redes sociais na atenção dos jovens. Cadernos de Psicologia e Tecnologia, 2025.
                 </li>
                 <li>
-                    <a href="https://scholar.google.com.br/scholar?q=Nacao+Dopamina+Anna+Lembke" target="_blank">
-                        LEMBKE, Anna. Nação Dopamina: Por que o excesso de prazer está nos deixando infelizes e o que podemos fazer para mudar.
-                    </a>
-                    <span class="detalhes">São Paulo: Vestígio, 2022. (Clique para buscar estudos relacionados)</span>
+                    <strong>CARR, Nicholas.</strong> A Geração Superficial: o que a internet está fazendo com os nossos cérebros. Rio de Janeiro: Agir, 2011.
                 </li>
                 <li>
-                    <a href="https://scholar.google.com.br/scholar?q=Foco+Roubado+Johann+Hari" target="_blank">
-                        HARI, Johann. Foco Roubado: Os ladrões de atenção da vida moderna.
-                    </a>
-                    <span class="detalhes">São Paulo: Companhia das Letras, 2022. (Clique para buscar estudos relacionados)</span>
+                    <strong>COLÉGIO RIO BRANCO.</strong> O uso de telas e o comportamento infanto-juvenil. Portal Educacional, 2024.
                 </li>
                 <li>
-                    <a href="https://scholar.google.com.br/scholar?q=Neuroplasticity+and+social+media+addiction+attention+span" target="_blank">
-                        FIRTH, J. et al. The "online brain": how the Internet may be changing our cognition.
-                    </a>
-                    <span class="detalhes">World Psychiatry, v. 18, n. 2, p. 119-129, 2019. (Artigo Científico)</span>
+                    <strong>CURY, A.</strong> Ansiedade: o mal do século e a era digital. São Paulo: Editora Benvirá, 2024.
+                </li>
+                <li>
+                    <strong>HARI, Johann.</strong> Foco Roubado: Os ladrões de atenção da vida moderna. São Paulo: Companhia das Letras, 2022.
+                </li>
+                <li>
+                    <strong>LEMBKE, Anna.</strong> Nação Dopamina: Por que o excesso de prazer está nos deixando infelizes. São Paulo: Vestígio, 2022.
+                </li>
+                <li>
+                    <strong>STULBERG, B.</strong> Fragmentação cognitiva e atenção parcial contínua na era dos algoritmos. Revista de Neurociência Aplicada, 2025.
                 </li>
             </ul>
         </section>
     </main>
 
     <footer>
-        <p><strong>Instituto Federal Baiano - Campus Uruçuca</strong></p>
+        <p><strong>Instituto Federal de Educação, Ciência e Tecnologia Baiano - Campus Uruçuca</strong></p>
         <p>&copy; 2026 Desenvolvido por 
-            <a href="http://lattes.cnpq.br/9617398374216033" target="_blank" rel="noopener noreferrer" class="lattes-link">Emil Fiedler</a>, 
+            <a href="http://lattes.cnpq.br/9617398374216033" target="_blank" rel="noopener noreferrer" class="lattes-link">Emil Fiedler Freitas</a>, 
             <a href="http://lattes.cnpq.br/7515132063925580" target="_blank" rel="noopener noreferrer" class="lattes-link">Camyla Lessa</a> e 
             <a href="http://lattes.cnpq.br/3528280094644164" target="_blank" rel="noopener noreferrer" class="lattes-link">Yasmin Alves</a>.
         </p>
-        <p>Apresentação de Trabalho de Conclusão de Curso.</p>
+        <p>Trabalho de Conclusão de Curso (TCC) - Técnico em Informática Integrado ao Ensino Médio.</p>
     </footer>
 
-    <!-- Script para renderizar os gráficos com Chart.js -->
+    <!-- LÓGICA DE EXECUÇÃO E RENDERIZAÇÃO DOS GRÁFICOS INTERATIVOS -->
     <script>
         Chart.defaults.font.family = "'Inter', sans-serif";
         Chart.defaults.color = "#475569";
 
-        // Gráfico 1: Tempo Médio de Tela
-        const ctx1 = document.getElementById('graficoTempoTela').getContext('2d');
-        new Chart(ctx1, {
-            type: 'doughnut',
-            data: {
-                labels: ['TikTok', 'Instagram Reels', 'YouTube Shorts', 'Outros'],
-                datasets: [{
-                    data: [45, 30, 15, 10],
-                    backgroundColor: ['#0f172a', '#ef4444', '#3b82f6', '#cbd5e1'],
-                    borderWidth: 0
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    title: { display: true, text: 'Distribuição do Tempo de Tela (%)', font: { size: 15, weight: 'bold' } },
-                    legend: { position: 'bottom' }
-                }
-            }
+        document.addEventListener("DOMContentLoaded", function() {
+            initCharts();
+            carregarEstadoSalvo();
         });
 
-        // Gráfico 2: Queda de Percepção de Foco
-        const ctx2 = document.getElementById('graficoAtencao').getContext('2d');
-        new Chart(ctx2, {
-            type: 'bar',
-            data: {
-                labels: ['0-1h', '1-3h', '3-5h', '+5h diárias'],
-                datasets: [{
-                    label: 'Capacidade de Foco (Autoavaliação 0-10)',
-                    data: [8.5, 7.0, 4.5, 3.0],
-                    backgroundColor: '#3b82f6',
-                    borderRadius: 6
-                }]
-            },
-            options: {
-                responsive: true,
-                scales: { y: { beginAtZero: true, max: 10 } },
-                plugins: {
-                    title: { display: true, text: 'Tempo de Uso vs Foco na Leitura', font: { size: 15, weight: 'bold' } }
+        function initCharts() {
+            // GRÁFICO 1: Perfil Demográfico
+            const ctxIdade = document.getElementById('chartIdade').getContext('2d');
+            new Chart(ctxIdade, {
+                type: 'pie',
+                data: {
+                    labels: ['18 a 20 anos (41.6%)', '15 a 17 anos (36.0%)', '21 a 24 anos (13.5%)', '25 a 30 anos (5.6%)', 'Mais de 30 anos (3.3%)'],
+                    datasets: [{
+                        data: [41.6, 36.0, 13.5, 5.6, 3.3],
+                        backgroundColor: ['#2563eb', '#dc2626', '#f59e0b', '#059669', '#8b5cf6'],
+                        hoverOffset: 15,
+                        borderWidth: 2,
+                        borderColor: '#ffffff'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                label: ctx => ` ${ctx.label}: ${ctx.raw}% dos participantes`
+                            }
+                        },
+                        legend: { position: 'bottom' }
+                    }
                 }
-            }
-        });
+            });
 
-        // Gráfico 3: Evolução Histórica da Atenção
-        const ctx3 = document.getElementById('graficoEvolucao').getContext('2d');
-        new Chart(ctx3, {
-            type: 'line',
-            data: {
-                labels: ['2004', '2008', '2012', '2016', '2020', '2024'],
-                datasets: [{
-                    label: 'Tempo médio de atenção por tela (Segundos)',
-                    data: [150, 110, 75, 47, 35, 20],
-                    borderColor: '#ef4444',
-                    backgroundColor: 'rgba(239, 68, 68, 0.1)',
-                    borderWidth: 3,
-                    fill: true,
-                    tension: 0.4,
-                    pointBackgroundColor: '#0f172a',
-                    pointRadius: 5
-                }]
-            },
-            options: {
-                responsive: true,
-                scales: { y: { beginAtZero: true } },
-                plugins: {
-                    title: { display: true, text: 'Declínio Histórico do Tempo de Atenção (Segundos)', font: { size: 15, weight: 'bold' } }
+            // GRÁFICO 2: Tempo de Tela por Faixa Etária
+            const ctxFaixa = document.getElementById('chartFaixaEtariaScreen').getContext('2d');
+            new Chart(ctxFaixa, {
+                type: 'bar',
+                data: {
+                    labels: ['15 a 17 anos', '18 a 20 anos', '21 a 24 anos', '25 a 30 anos', '+30 anos'],
+                    datasets: [
+                        { label: 'Menos de 30 min', data: [3.1, 2.7, 0.0, 5.0, 12.0], backgroundColor: '#e2e8f0' },
+                        { label: '30 min a 1 hora', data: [15.6, 27.0, 25.0, 30.0, 35.0], backgroundColor: '#93c5fd' },
+                        { label: '1 a 2 horas', data: [28.1, 29.7, 16.7, 25.0, 28.0], backgroundColor: '#2563eb' },
+                        { label: '2 a 3 horas', data: [28.1, 18.9, 33.3, 20.0, 15.0], backgroundColor: '#1d4ed8' },
+                        { label: '3 a 4 horas', data: [6.2, 5.4, 0.0, 10.0, 5.0], backgroundColor: '#f59e0b' },
+                        { label: 'Mais de 4 horas', data: [18.8, 16.2, 25.0, 10.0, 5.0], backgroundColor: '#dc2626' }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: { mode: 'index', intersect: false },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 40,
+                            ticks: { callback: v => v + '%' }
+                        }
+                    },
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                label: ctx => ` ${ctx.dataset.label}: ${ctx.raw}%`
+                            }
+                        },
+                        legend: { position: 'bottom' }
+                    }
                 }
+            });
+
+            // GRÁFICO 3: Interferência nos Estudos
+            const ctxInterf = document.getElementById('chartInterferencia').getContext('2d');
+            new Chart(ctxInterf, {
+                type: 'doughnut',
+                data: {
+                    labels: [
+                        'Interfere bastante (29.2%)',
+                        'Interfere pouco (27.0%)',
+                        'Interfere moderadamente (25.8%)',
+                        'Interfere muito (13.5%)',
+                        'Não interfere (4.5%)'
+                    ],
+                    datasets: [{
+                        data: [29.2, 27.0, 25.8, 13.5, 4.5],
+                        backgroundColor: ['#2563eb', '#f59e0b', '#f97316', '#059669', '#8b5cf6'],
+                        hoverOffset: 18,
+                        borderWidth: 2,
+                        borderColor: '#ffffff'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                label: ctx => ` ${ctx.label}`
+                            }
+                        },
+                        legend: { position: 'bottom' }
+                    }
+                }
+            });
+
+            // GRÁFICO 4: Qualidade do Sono vs Tempo Diário
+            const ctxSono = document.getElementById('chartSonoTempo').getContext('2d');
+            new Chart(ctxSono, {
+                type: 'bar',
+                data: {
+                    labels: ['1 a 2 horas', '2 a 3 horas', '3 a 4 horas', '30 min a 1h', 'Mais de 4h', 'Menos de 30 min'],
+                    datasets: [
+                        { label: 'Boa', data: [12.0, 5.0, 10.0, 15.8, 16.7, 0.0], backgroundColor: '#059669' },
+                        { label: 'Muito boa', data: [8.0, 5.0, 0.0, 21.1, 0.0, 0.0], backgroundColor: '#34d399' },
+                        { label: 'Regular', data: [64.0, 60.0, 60.0, 36.8, 41.7, 0.0], backgroundColor: '#ec4899' },
+                        { label: 'Ruim', data: [16.0, 25.0, 30.0, 21.1, 33.3, 66.7], backgroundColor: '#a3e635' },
+                        { label: 'Muito ruim', data: [0.0, 5.0, 0.0, 5.3, 8.3, 33.3], backgroundColor: '#6366f1' }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
+                            ticks: { callback: v => v + '%' }
+                        }
+                    },
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                label: ctx => ` ${ctx.dataset.label}: ${ctx.raw}%`
+                            }
+                        },
+                        legend: { position: 'bottom' }
+                    }
+                }
+            });
+        }
+
+        // LÓGICA DO DIAGNÓSTICO E TAREFAS DIÁRIAS (LOCALSTORAGE)
+        const bancoTarefas = [
+            "Ler 10 páginas de um livro físico sem colocar o celular por perto.",
+            "Desativar todas as notificações de redes sociais durante a tarde.",
+            "Deixar o celular em outro cômodo 30 minutos antes de ir dormir.",
+            "Estudar por 25 minutos seguidos usando a Técnica Pomodoro (foco total).",
+            "Ativar o modo 'Tons de Cinza' (Grayscale) na tela do smartphone.",
+            "Fazer uma refeição completa sem olhar para nenhuma tela.",
+            "Praticar a regra 20-20-20: A cada 20 min de tela, olhe para algo a 6 metros por 20 seg.",
+            "Apagar o aplicativo de vídeos curtos por 24 horas como teste de disciplina.",
+            "Substituir o scroll noturno por uma leitura em luz amarela ou podcast relaxante."
+        ];
+
+        function processarDiagnostico() {
+            const p1 = parseInt(document.getElementById('p1').value);
+            const p2 = parseInt(document.getElementById('p2').value);
+            const p3 = parseInt(document.getElementById('p3').value);
+            const p4 = parseInt(document.getElementById('p4').value);
+
+            const somaPontos = p1 + p2 + p3 + p4;
+            let problemas = [];
+            let nivel = "";
+            let orientacao = "";
+
+            if (p1 >= 3) problemas.push("Exposição excessiva a picos de dopamina variáveis pelo alto tempo de tela.");
+            if (p2 >= 3) problemas.push("Déficit severo de Atenção Sustentada e enfraquecimento da memória de trabalho.");
+            if (p3 >= 3) problemas.push("Inibição da produção de melatonina devido à luz azul e hiperestimulação noturna.");
+            if (p4 >= 3) problemas.push("Condicionamento da busca compulsiva por recompensas instantâneas (tolerância dopaminérgica).");
+
+            if (somaPontos <= 6) {
+                nivel = "Nível de Risco: BAIXO";
+                orientacao = "Você apresenta bons hábitos de higiene digital! Continue mantendo seus limites de tela para proteger sua capacidade de atenção.";
+            } else if (somaPontos <= 11) {
+                nivel = "Nível de Risco: MODERADO";
+                orientacao = "Atenção! Seus hábitos atuais já demonstram sinais de fragmentação cognitiva. Siga o plano de tarefas abaixo para restaurar seu foco.";
+            } else {
+                nivel = "Nível de Risco: ALTO (Fragmentação Cognitiva Severa)";
+                orientacao = "Alerta Vermelho! O consumo descontrolado está prejudicando ativamente seus estudos e sono. É crucial implementar as tarefas diárias abaixo de imediato.";
             }
-        });
+
+            if (problemas.length === 0) {
+                problemas.push("Nenhum problema grave detectado no momento. Mantenha a vigilância contra o uso passivo.");
+            }
+
+            const tarefasIniciais = [
+                { id: 0, texto: bancoTarefas[0], concluida: false },
+                { id: 1, texto: bancoTarefas[1], concluida: false },
+                { id: 2, texto: bancoTarefas[2], concluida: false }
+            ];
+
+            const hoje = new Date().toISOString().split('T')[0];
+
+            const estado = {
+                dataUltimoAcesso: hoje,
+                nivel: nivel,
+                problemas: problemas,
+                orientacao: orientacao,
+                tarefas: tarefasIniciais
+            };
+
+            localStorage.setItem('tcc_app_estado', JSON.stringify(estado));
+            renderizarPainel(estado);
+        }
+
+        function carregarEstadoSalvo() {
+            const estadoSalvo = localStorage.getItem('tcc_app_estado');
+            if (!estadoSalvo) return;
+
+            let estado = JSON.parse(estadoSalvo);
+            const dataSalvaNoStorage = estado.dataUltimoAcesso;
+            const hojeSistema = new Date().toISOString().split('T')[0];
+
+            if (dataSalvaNoStorage !== hojeSistema) {
+                estado.tarefas = estado.tarefas.map((t) => {
+                    if (t.concluida) {
+                        const tarefasAtuaisTextos = estado.tarefas.map(x => x.texto);
+                        const disponiveis = bancoTarefas.filter(bt => !tarefasAtuaisTextos.includes(bt));
+                        const novoTexto = disponiveis[Math.floor(Math.random() * disponiveis.length)] || bancoTarefas[0];
+                        return { id: Math.random(), texto: novoTexto, concluida: false };
+                    } else {
+                        return t;
+                    }
+                });
+
+                estado.dataUltimoAcesso = hojeSistema;
+                localStorage.setItem('tcc_app_estado', JSON.stringify(estado));
+            }
+
+            renderizarPainel(estado);
+        }
+
+        function renderizarPainel(estado) {
+            document.getElementById('painel-resultados').style.display = 'block';
+            document.getElementById('resumo-nivel').innerText = estado.nivel;
+            document.getElementById('orientacao-geral').innerText = estado.orientacao;
+
+            const cardDiag = document.querySelector('.card-diagnostico');
+            cardDiag.className = "card-diagnostico";
+            if (estado.nivel.includes("BAIXO")) {
+                cardDiag.classList.add("risco-baixo");
+            } else if (estado.nivel.includes("MODERADO")) {
+                cardDiag.classList.add("risco-moderado");
+            } else {
+                cardDiag.classList.add("risco-alto");
+            }
+
+            const ulProblemas = document.getElementById('lista-problemas');
+            ulProblemas.innerHTML = '';
+            estado.problemas.forEach(prob => {
+                const li = document.createElement('li');
+                li.innerText = prob;
+                ulProblemas.appendChild(li);
+            });
+
+            const containerTarefas = document.getElementById('container-tarefas');
+            containerTarefas.innerHTML = '';
+
+            estado.tarefas.forEach((tarefa, index) => {
+                const div = document.createElement('div');
+                div.className = `tarefa-item ${tarefa.concluida ? 'concluida' : ''}`;
+                div.innerHTML = `
+                    <span class="tarefa-texto"><i class="fa-solid fa-circle-check" style="color: ${tarefa.concluida ? '#059669' : '#94a3b8'}; margin-right: 8px;"></i> ${tarefa.texto}</span>
+                    <button class="btn-check" onclick="alternarTarefa(${index})">
+                        ${tarefa.concluida ? '✓ Concluída' : 'Marcar como Feita'}
+                    </button>
+                `;
+                containerTarefas.appendChild(div);
+            });
+        }
+
+        function alternarTarefa(index) {
+            const estadoSalvo = localStorage.getItem('tcc_app_estado');
+            if (!estadoSalvo) return;
+
+            let estado = JSON.parse(estadoSalvo);
+            estado.tarefas[index].concluida = !estado.tarefas[index].concluida;
+
+            localStorage.setItem('tcc_app_estado', JSON.stringify(estado));
+            renderizarPainel(estado);
+        }
     </script>
 </body>
 </html>
