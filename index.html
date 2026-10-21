@@ -47,7 +47,7 @@
             background-color: var(--cor-fundo);
         }
 
-        /* Navbar Moderna com Scroll Horizontal Suave no Mobile */
+        /* Navbar Centralizada */
         nav {
             background-color: rgba(15, 23, 42, 0.95);
             backdrop-filter: blur(12px);
@@ -57,51 +57,49 @@
             z-index: 1000;
             padding: 0.8rem 1rem;
             display: flex;
-            justify-content: flex-start;
-            gap: 0.8rem;
-            flex-wrap: nowrap;
-            overflow-x: auto;
+            justify-content: center;
+            align-items: center;
+            gap: 1.2rem;
+            flex-wrap: wrap;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            -webkit-overflow-scrolling: touch;
-        }
-
-        nav::-webkit-scrollbar {
-            display: none;
         }
 
         nav a {
             color: #cbd5e1;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.78rem;
+            font-size: 0.82rem;
             text-transform: uppercase;
             letter-spacing: 1px;
             transition: all 0.3s ease;
             padding: 6px 12px;
             border-radius: 6px;
             white-space: nowrap;
-            flex-shrink: 0;
         }
 
         nav a:hover {
             color: #ffffff;
-            background-color: rgba(59, 130, 246, 0.2);
+            background-color: rgba(255, 255, 255, 0.1);
         }
 
-        /* Hero Section */
+        /* Hero Section Totalmente Centralizado */
         header {
             background: linear-gradient(135deg, var(--cor-primaria) 0%, #1e293b 100%);
             color: white;
             text-align: center;
-            padding: 8rem 1rem 5rem 1rem;
+            padding: 9rem 1rem 5.5rem 1rem;
             clip-path: polygon(0 0, 100% 0, 100% 97%, 0 100%);
             box-shadow: inset 0 -20px 30px rgba(0,0,0,0.2);
             word-wrap: break-word;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
         .instituicao {
-            font-size: 0.78rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 2px;
             color: #60a5fa;
@@ -112,36 +110,38 @@
         }
 
         header h1 {
-            font-size: 2.2rem;
+            font-size: 2.3rem;
             font-weight: 800;
-            max-width: 1000px;
+            max-width: 950px;
             margin: 0 auto;
-            line-height: 1.3;
+            line-height: 1.25;
             letter-spacing: -0.5px;
             text-shadow: 0 4px 12px rgba(0,0,0,0.2);
             padding: 0 0.5rem;
         }
 
         .subtitulo {
-            font-size: 0.98rem;
+            font-size: 1.05rem;
             color: #94a3b8;
             margin-top: 1.2rem;
             font-weight: 300;
             padding: 0 0.8rem;
             line-height: 1.5;
+            max-width: 800px;
         }
 
         .autores {
             margin-top: 2rem;
             display: inline-flex;
-            gap: 0.8rem;
-            background: rgba(255, 255, 255, 0.06);
-            padding: 0.8rem 1.2rem;
-            border-radius: 24px;
+            gap: 1.2rem;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
             backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.12);
             flex-wrap: wrap;
             justify-content: center;
+            align-items: center;
             max-width: 100%;
         }
 
@@ -149,19 +149,22 @@
             color: #f8fafc;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.88rem;
+            font-size: 0.9rem;
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
             transition: all 0.3s ease;
-            padding: 5px 10px;
-            border-radius: 16px;
+            padding: 4px 12px;
+            border-radius: 20px;
+        }
+
+        .autores a i {
+            color: #ffffff;
         }
 
         .autores a:hover {
             color: #ffffff;
-            background-color: var(--cor-secundaria);
-            box-shadow: 0 0 15px rgba(37, 99, 235, 0.5);
+            background-color: rgba(255, 255, 255, 0.15);
         }
 
         /* Botão do PDF */
@@ -172,7 +175,7 @@
             gap: 10px;
             background-color: #dc2626;
             color: white;
-            padding: 0.8rem 1.4rem;
+            padding: 0.8rem 1.6rem;
             border-radius: 30px;
             text-decoration: none;
             font-weight: 600;
@@ -202,7 +205,7 @@
 
         section {
             background: var(--cor-card);
-            padding: 2.2rem 1.2rem;
+            padding: 2.8rem 2rem;
             margin-bottom: 2rem;
             border-radius: 16px;
             box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
@@ -210,33 +213,34 @@
             word-wrap: break-word;
         }
 
+        /* Títulos com Ícones Pretos */
         h2 {
             color: var(--cor-primaria);
-            font-size: 1.5rem;
-            margin-bottom: 1.4rem;
+            font-size: 1.65rem;
+            margin-bottom: 1.5rem;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             font-weight: 700;
             letter-spacing: -0.5px;
         }
 
         h2 i {
-            color: var(--cor-secundaria);
+            color: var(--cor-primaria);
         }
 
         h2::after {
             content: '';
             flex: 1;
             height: 2px;
-            background: linear-gradient(to right, var(--cor-secundaria), transparent);
+            background: linear-gradient(to right, var(--cor-primaria), transparent);
             margin-left: 10px;
-            opacity: 0.3;
+            opacity: 0.2;
         }
 
         h3 {
             color: var(--cor-primaria);
-            font-size: 1.15rem;
+            font-size: 1.2rem;
             margin: 1.5rem 0 0.8rem 0;
             font-weight: 600;
         }
@@ -244,20 +248,63 @@
         p {
             margin-bottom: 1.1rem;
             text-align: justify;
-            font-size: 0.98rem;
+            font-size: 1rem;
             color: #475569;
         }
 
         /* Destaques conceituais */
         .destaque-box {
-            background: #eff6ff;
-            border-left: 4px solid var(--cor-secundaria);
-            padding: 1.2rem;
+            background: #f1f5f9;
+            border-left: 4px solid var(--cor-primaria);
+            padding: 1.2rem 1.5rem;
             border-radius: 0 10px 10px 0;
             margin: 1.5rem 0;
             font-style: italic;
-            color: #1e3a8a;
+            color: var(--cor-primaria);
+            font-size: 0.98rem;
+        }
+
+        /* Grid de Cards de Impacto */
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.8rem;
+            margin-top: 1.8rem;
+        }
+
+        .card-impacto {
+            background: var(--cor-fundo);
+            padding: 2rem 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--cor-borda);
+            border-top: 4px solid var(--cor-primaria);
+            transition: all 0.3s ease;
+        }
+
+        .card-impacto:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.06);
+            border-top-color: #020617;
+        }
+
+        .card-impacto i {
+            font-size: 2.2rem;
+            color: var(--cor-primaria);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .card-impacto h3 {
+            margin: 0 0 0.8rem 0;
+            font-size: 1.15rem;
+            color: var(--cor-primaria);
+        }
+
+        .card-impacto p {
             font-size: 0.95rem;
+            margin-bottom: 0;
+            color: #475569;
+            text-align: left;
         }
 
         /* Grid de Gráficos Dinâmicos */
@@ -270,7 +317,7 @@
 
         .grafico-card {
             background: #f8fafc;
-            padding: 1.2rem 0.5rem;
+            padding: 1.5rem 1rem;
             border-radius: 14px;
             border: 1px solid var(--cor-borda);
             box-shadow: 0 4px 12px rgba(0,0,0,0.02);
@@ -280,7 +327,7 @@
 
         .grafico-card h3 {
             color: var(--cor-primaria);
-            font-size: 1.05rem;
+            font-size: 1.1rem;
             margin-bottom: 1rem;
             text-align: center;
             padding: 0 0.5rem;
@@ -291,72 +338,142 @@
             width: 100%;
             max-width: 100%;
             margin: 0 auto;
-            height: 260px;
+            height: 280px;
         }
 
         .grafico-legenda {
             text-align: left;
-            font-size: 0.85rem;
+            font-size: 0.88rem;
             color: #475569;
             margin-top: 1.2rem;
             font-style: italic;
             background: #ffffff;
-            padding: 10px 12px;
-            border-left: 3px solid var(--cor-secundaria);
+            padding: 10px 14px;
+            border-left: 3px solid var(--cor-primaria);
             border-radius: 6px;
             box-shadow: 0 2px 6px rgba(0,0,0,0.02);
             border: 1px solid var(--cor-borda);
         }
 
-        /* Área Interativa da Plataforma */
+        /* CARROSSEL DE PERGUNTAS */
         .app-container {
             background: #f8fafc;
             border: 1px solid #e2e8f0;
             border-radius: 14px;
-            padding: 1.2rem 0.8rem;
+            padding: 1.5rem;
             margin-top: 1.5rem;
         }
 
-        .pergunta-group {
-            background: white;
-            padding: 1.2rem 1rem;
-            border-radius: 10px;
-            margin-bottom: 1.2rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
-            border: 1px solid var(--cor-borda);
-        }
-
-        .pergunta-group label {
-            font-weight: 600;
-            display: block;
+        .quiz-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             margin-bottom: 0.8rem;
-            color: var(--cor-primaria);
-            font-size: 0.95rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #64748b;
         }
 
-        .pergunta-group select {
+        .barra-progresso-bg {
             width: 100%;
-            padding: 0.8rem;
+            height: 8px;
+            background-color: #e2e8f0;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+        }
+
+        .barra-progresso-fill {
+            height: 100%;
+            width: 10%;
+            background-color: var(--cor-primaria);
+            transition: width 0.3s ease;
+        }
+
+        .pergunta-card {
+            display: none;
+            background: white;
+            padding: 1.8rem 1.4rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            border: 1px solid var(--cor-borda);
+            animation: fadeInStep 0.4s ease-in-out;
+        }
+
+        .pergunta-card.active {
+            display: block;
+        }
+
+        @keyframes fadeInStep {
+            from { opacity: 0; transform: translateX(10px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .pergunta-card label {
+            font-weight: 700;
+            display: block;
+            margin-bottom: 1rem;
+            color: var(--cor-primaria);
+            font-size: 1.02rem;
+            line-height: 1.45;
+        }
+
+        .pergunta-card select {
+            width: 100%;
+            padding: 0.95rem;
             border-radius: 8px;
             border: 1px solid #cbd5e1;
             font-family: 'Inter', sans-serif;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             background-color: #f8fafc;
             color: var(--cor-texto);
+            cursor: pointer;
+            transition: border-color 0.2s;
         }
 
-        .btn-acao {
-            background-color: var(--cor-secundaria);
+        .pergunta-card select:focus {
+            outline: none;
+            border-color: var(--cor-primaria);
+        }
+
+        .quiz-controles {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .btn-quiz {
+            background-color: var(--cor-primaria);
             color: white;
-            font-weight: 700;
-            padding: 1rem;
+            font-weight: 600;
+            padding: 0.85rem 1.4rem;
             border: none;
-            border-radius: 10px;
+            border-radius: 8px;
             cursor: pointer;
-            width: 100%;
-            font-size: 0.98rem;
+            font-size: 0.95rem;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-quiz:hover {
+            background-color: #1e293b;
+        }
+
+        .btn-quiz.btn-secundario {
+            background-color: #e2e8f0;
+            color: #475569;
+        }
+
+        .btn-quiz.btn-secundario:hover {
+            background-color: #cbd5e1;
+        }
+
+        .btn-quiz:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
         }
 
         .painel-resultados {
@@ -366,7 +483,7 @@
 
         .card-diagnostico {
             background: #fff;
-            padding: 1.2rem;
+            padding: 1.4rem;
             border-radius: 12px;
             margin-bottom: 1.5rem;
             box-shadow: 0 4px 12px rgba(0,0,0,0.05);
@@ -393,20 +510,20 @@
         .card-diagnostico.risco-alto h4 { color: var(--cor-destaque); }
 
         .card-diagnostico h4 {
-            font-size: 1.15rem;
+            font-size: 1.2rem;
             margin-bottom: 0.8rem;
         }
 
         .lista-problemas {
             margin-left: 1.2rem;
             margin-bottom: 1rem;
-            font-size: 0.92rem;
+            font-size: 0.95rem;
         }
 
         .painel-tarefas {
             background: white;
             border-radius: 12px;
-            padding: 1.2rem 1rem;
+            padding: 1.4rem 1.2rem;
             box-shadow: 0 4px 12px rgba(0,0,0,0.05);
             border: 1px solid var(--cor-borda);
         }
@@ -432,9 +549,20 @@
 
         .tarefa-texto {
             font-weight: 500;
-            font-size: 0.92rem;
+            font-size: 0.95rem;
             color: #1e293b;
         }
+
+        .badge-nivel {
+            font-size: 0.75rem;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .badge-alto { background-color: #fee2e2; color: #dc2626; }
+        .badge-moderado { background-color: #fef3c7; color: #d97706; }
+        .badge-baixo { background-color: #ecfdf5; color: #059669; }
 
         .btn-check {
             width: 100%;
@@ -463,11 +591,11 @@
             background: #f8fafc;
             padding: 1rem 1rem 1rem 2.8rem;
             border-radius: 10px;
-            border-left: 4px solid var(--cor-secundaria);
+            border-left: 4px solid var(--cor-primaria);
             position: relative;
             border: 1px solid var(--cor-borda);
             border-left-width: 4px;
-            font-size: 0.88rem;
+            font-size: 0.9rem;
             word-break: break-word;
         }
 
@@ -477,7 +605,7 @@
             font-weight: 900;
             position: absolute;
             left: 1rem;
-            color: var(--cor-secundaria);
+            color: var(--cor-primaria);
             top: 1.1rem;
         }
 
@@ -498,24 +626,40 @@
             text-decoration: none;
         }
 
-        /* AJUSTES RESPONSIVOS ESPECÍFICOS PARA TELEMÓVEIS (MENOS DE 768px) */
+        /* RESPONSIVIDADE PARA DISPOSITIVOS MÓVEIS */
         @media (max-width: 768px) {
+            nav {
+                justify-content: flex-start;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                padding: 0.8rem;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            nav::-webkit-scrollbar { display: none; }
+
+            nav a {
+                font-size: 0.78rem;
+                padding: 5px 10px;
+                flex-shrink: 0;
+            }
+
             header {
-                padding: 6.5rem 0.8rem 4rem 0.8rem;
+                padding: 7rem 0.8rem 4rem 0.8rem;
             }
 
             header h1 {
-                font-size: 1.65rem;
+                font-size: 1.7rem;
                 line-height: 1.35;
             }
 
             .instituicao {
-                font-size: 0.72rem;
+                font-size: 0.75rem;
                 letter-spacing: 1.5px;
             }
 
             .subtitulo {
-                font-size: 0.88rem;
+                font-size: 0.9rem;
             }
 
             .autores {
@@ -537,11 +681,19 @@
             }
 
             h2 {
-                font-size: 1.3rem;
+                font-size: 1.35rem;
             }
 
             .chart-wrapper {
                 height: 240px;
+            }
+
+            .quiz-controles {
+                flex-direction: column;
+            }
+            .btn-quiz {
+                justify-content: center;
+                width: 100%;
             }
         }
     </style>
@@ -625,7 +777,7 @@
                         <canvas id="chartFaixaEtariaScreen"></canvas>
                     </div>
                     <div class="grafico-legenda">
-                        <strong>Figura 1:</strong> Análise cruzada demonstrando a distribuição do tempo diário de consumo de vídeos curtos segmentada por faixa etária entre os 89 participantes da pesquisa.
+                        <strong>Figura 2:</strong> Análise cruzada demonstrando a distribuição do tempo diário de consumo de vídeos curtos segmentada por faixa etária entre os 89 participantes da pesquisa.
                     </div>
                 </div>
 
@@ -636,7 +788,7 @@
                         <canvas id="chartInterferencia"></canvas>
                     </div>
                     <div class="grafico-legenda">
-                        <strong>Figura 2:</strong> Impacto percebido do consumo de vídeos curtos no rendimento dos estudos, onde 68,5% dos respondentes relatam interferência moderada, bastante ou muita em suas atividades.
+                        <strong>Figura 3:</strong> Impacto percebido do consumo de vídeos curtos no rendimento dos estudos, onde 68,5% dos respondentes relatam interferência moderada, bastante ou muita em suas atividades.
                     </div>
                 </div>
 
@@ -647,7 +799,7 @@
                         <canvas id="chartSonoTempo"></canvas>
                     </div>
                     <div class="grafico-legenda">
-                        <strong>Figura 3:</strong> Análise bivariada correlacionando o tempo diário de exposição aos vídeos curtos com a qualidade do sono relatada, evidenciando o declínio na qualidade do descanso em usos acima de 2 horas diárias.
+                        <strong>Figura 4:</strong> Análise bivariada correlacionando o tempo diário de exposição aos vídeos curtos com a qualidade do sono relatada, evidenciando o declínio na qualidade do descanso em usos acima de 2 horas diárias.
                     </div>
                 </div>
             </div>
@@ -655,67 +807,175 @@
 
         <!-- IMPACTOS -->
         <section id="impactos">
-            <h2><i class="fa-solid fa-triangle-exclamation"></i> Impactos na Rotina e Cognição</h2>
-            <p>O uso desregrado de vídeos curtos desencadeia múltiplos prejuízos comprovados pela literatura científica e pelos dados empíricos coletados:</p>
-            <p>• <strong>Déficit de Atenção Sustentada:</strong> A incapacidade de manter o foco prolongado compromete o aprendizado em sala de aula e a capacidade de retenção de conteúdos complexos.</p>
-            <p>• <strong>Distúrbios do Sono e Melatonina:</strong> A emissão de luz azul combinada à hiperestimulação dopaminérgica noturna na cama inibe a produção natural de melatonina, gerando fadiga crônica e insônia.</p>
-            <p>• <strong>Procrastinação e Ansiedade:</strong> O ciclo vicioso da rolagem infinita gera culpa, ansiedade por perda de tempo (FOMO) e comportamentos análogos à dependência digital.</p>
+            <h2><i class="fa-solid fa-bolt"></i> Principais Impactos Cognitivos</h2>
+            
+            <div class="grid-cards">
+                <div class="card-impacto">
+                    <i class="fa-solid fa-book-open-reader"></i>
+                    <h3>Déficit de Atenção Sustentada</h3>
+                    <p>Relatos de dificuldade crescente e irritabilidade ao tentar realizar tarefas que exigem foco contínuo e linear, como leitura de textos acadêmicos para o ENEM ou vestibulares.</p>
+                </div>
+                <div class="card-impacto">
+                    <i class="fa-solid fa-stopwatch"></i>
+                    <h3>Gratificação Imediata</h3>
+                    <p>Condicionamento neural a esperar recompensas instantâneas. Isso gera baixa tolerância à frustração e ansiedade em atividades cujos resultados só aparecem a longo prazo.</p>
+                </div>
+                <div class="card-impacto">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    <h3>Fadiga Mental e Retenção Falha</h3>
+                    <p>A sobrecarga de estímulos e a rápida troca de assunto prejudicam a transferência de informações da memória de trabalho (curto prazo) para a memória de longo prazo.</p>
+                </div>
+            </div>
         </section>
 
-        <!-- SOLUÇÕES (PLATAFORMA INTERATIVA) -->
+        <!-- SOLUÇÕES (PLATAFORMA INTERATIVA COM QUIZ DE 10 PERGUNTAS EM CARROSSEL) -->
         <section id="solucoes">
             <h2><i class="fa-solid fa-laptop-code"></i> Soluções: Plataforma Interativa & Hábitos Saudáveis</h2>
-            <p>O sistema gerará <strong>tarefas diárias de reabilitações. </strong> </p>
+            <p>Responda ao questionário passo a passo abaixo para avaliar seu nível de fragmentação cognitiva. O sistema gerará <strong>tarefas diárias de reabilitação gradual</strong> personalizadas para o seu grau de dependência!</p>
 
             <div class="app-container">
-                <form id="form-diagnostico">
-                    <div class="pergunta-group">
-                        <label><i class="fa-solid fa-clock"></i> 1. Quanto tempo por dia você passa assistindo a vídeos curtos (TikTok, Reels, Shorts)?</label>
-                        <select id="p1" required>
-                            <option value="1">Menos de 1 hora</option>
-                            <option value="2">Entre 1 e 2 horas</option>
-                            <option value="3">Entre 2 e 4 horas</option>
-                            <option value="4">Mais de 4 horas diárias</option>
-                        </select>
+                <div id="quiz-wrapper">
+                    <!-- Cabeçalho do Quiz (Indicador de Passo) -->
+                    <div class="quiz-header">
+                        <span><i class="fa-solid fa-list-check"></i> Questionário de Diagnóstico</span>
+                        <span id="quiz-passo-texto">Pergunta 1 de 10</span>
                     </div>
 
-                    <div class="pergunta-group">
-                        <label><i class="fa-solid fa-book-open"></i> 2. Qual o seu grau de dificuldade ao tentar ler um livro ou texto acadêmico longo sem checar o celular?</label>
-                        <select id="p2" required>
-                            <option value="1">Nenhuma dificuldade (Consigo manter o foco)</option>
-                            <option value="2">Pouca dificuldade (Sinto leve distração)</option>
-                            <option value="3">Dificuldade moderada (Preciso checar a cada 15 min)</option>
-                            <option value="4">Muita dificuldade (Não consigo ler mais de 5 minutos)</option>
-                        </select>
+                    <!-- Barra de Progresso -->
+                    <div class="barra-progresso-bg">
+                        <div id="barra-fill" class="barra-progresso-fill"></div>
                     </div>
 
-                    <div class="pergunta-group">
-                        <label><i class="fa-solid fa-moon"></i> 3. Você costuma assistir a vídeos curtos na cama antes de dormir?</label>
-                        <select id="p3" required>
-                            <option value="1">Raramente ou Nunca</option>
-                            <option value="2">Às vezes (Paro 30 min antes de dormir)</option>
-                            <option value="3">Frequentemente (Paro menos de 15 min antes)</option>
-                            <option value="4">Sempre (Durmo com o celular na mão)</option>
-                        </select>
-                    </div>
+                    <form id="form-diagnostico">
+                        <!-- Pergunta 1 -->
+                        <div class="pergunta-card active" data-step="1">
+                            <label><i class="fa-solid fa-clock"></i> 1. Quanto tempo por dia você passa assistindo a vídeos curtos (TikTok, Reels, Shorts)?</label>
+                            <select id="p1" required>
+                                <option value="1">Menos de 1 hora</option>
+                                <option value="2">Entre 1 e 2 horas</option>
+                                <option value="3">Entre 2 e 4 horas</option>
+                                <option value="4">Mais de 4 horas diárias</option>
+                            </select>
+                        </div>
 
-                    <div class="pergunta-group">
-                        <label><i class="fa-solid fa-rotate"></i> 4. Ao rolar o feed, com que frequência você pula vídeos rapidamente buscando algo "mais interessante"?</label>
-                        <select id="p4" required>
-                            <option value="1">Raramente</option>
-                            <option value="2">Às vezes</option>
-                            <option value="3">Frequentemente</option>
-                            <option value="4">Sempre (Mudo de vídeo em menos de 5 segundos)</option>
-                        </select>
-                    </div>
+                        <!-- Pergunta 2 -->
+                        <div class="pergunta-card" data-step="2">
+                            <label><i class="fa-solid fa-book-open"></i> 2. Qual o seu grau de dificuldade ao tentar ler um livro ou texto acadêmico longo sem checar o celular?</label>
+                            <select id="p2" required>
+                                <option value="1">Nenhuma dificuldade (Consigo manter o foco)</option>
+                                <option value="2">Pouca dificuldade (Sinto leve distração)</option>
+                                <option value="3">Dificuldade moderada (Preciso checar a cada 15 min)</option>
+                                <option value="4">Muita dificuldade (Não consigo ler mais de 5 minutos)</option>
+                            </select>
+                        </div>
 
-                    <button type="button" class="btn-acao" onclick="processarDiagnostico()"><i class="fa-solid fa-chart-line"></i> Gerar Meu Plano Diário</button>
-                </form>
+                        <!-- Pergunta 3 -->
+                        <div class="pergunta-card" data-step="3">
+                            <label><i class="fa-solid fa-moon"></i> 3. Você costuma assistir a vídeos curtos na cama antes de dormir?</label>
+                            <select id="p3" required>
+                                <option value="1">Raramente ou Nunca</option>
+                                <option value="2">Às vezes (Paro 30 min antes de dormir)</option>
+                                <option value="3">Frequentemente (Paro menos de 15 min antes)</option>
+                                <option value="4">Sempre (Durmo com o celular na mão)</option>
+                            </select>
+                        </div>
+
+                        <!-- Pergunta 4 -->
+                        <div class="pergunta-card" data-step="4">
+                            <label><i class="fa-solid fa-rotate"></i> 4. Ao rolar o feed, com que frequência você pula vídeos rapidamente buscando algo "mais interessante"?</label>
+                            <select id="p4" required>
+                                <option value="1">Raramente</option>
+                                <option value="2">Às vezes</option>
+                                <option value="3">Frequentemente</option>
+                                <option value="4">Sempre (Mudo de vídeo em menos de 5 segundos)</option>
+                            </select>
+                        </div>
+
+                        <!-- Pergunta 5 -->
+                        <div class="pergunta-card" data-step="5">
+                            <label><i class="fa-solid fa-tv"></i> 5. Com que frequência você assiste a vídeos curtos enquanto realiza outra atividade (estudando, comendo ou vendo TV)?</label>
+                            <select id="p5" required>
+                                <option value="1">Raramente ou Nunca</option>
+                                <option value="2">Às vezes</option>
+                                <option value="3">Frequentemente</option>
+                                <option value="4">Sempre (Não consigo fazer refeições sem vídeos)</option>
+                            </select>
+                        </div>
+
+                        <!-- Pergunta 6 -->
+                        <div class="pergunta-card" data-step="6">
+                            <label><i class="fa-solid fa-bell"></i> 6. Como você reage ao receber uma notificação de rede social enquanto está concentrado?</label>
+                            <select id="p6" required>
+                                <option value="1">Ignoro e continuo o que estou fazendo</option>
+                                <option value="2">Espero terminar a tarefa para olhar</option>
+                                <option value="3">Sinto ansiedade e checo em poucos minutos</option>
+                                <option value="4">Interrompo imediatamente a atividade para olhar</option>
+                            </select>
+                        </div>
+
+                        <!-- Pergunta 7 -->
+                        <div class="pergunta-card" data-step="7">
+                            <label><i class="fa-solid fa-brain"></i> 7. Durante os estudos ou aulas, quantas pausas involuntárias você faz para abrir redes sociais por hora?</label>
+                            <select id="p7" required>
+                                <option value="1">Nenhuma pausa não planejada</option>
+                                <option value="2">1 a 2 pausas curtas</option>
+                                <option value="3">3 a 5 pausas rápidas</option>
+                                <option value="4">Mais de 5 pausas por hora</option>
+                            </select>
+                        </div>
+
+                        <!-- Pergunta 8 -->
+                        <div class="pergunta-card" data-step="8">
+                            <label><i class="fa-solid fa-film"></i> 8. Qual a sua capacidade/paciência para assistir a um filme longo ou documentário completo sem mexer no celular?</label>
+                            <select id="p8" required>
+                                <option value="1">Alta (Assisto do início ao fim sem olhar o celular)</option>
+                                <option value="2">Boa (Olho rapidamente só nos intervalos)</option>
+                                <option value="3">Baixa (Abro o celular várias vezes durante a cena)</option>
+                                <option value="4">Nenhuma (Prefiro ver resumos rápidos ou acelerar vídeos)</option>
+                            </select>
+                        </div>
+
+                        <!-- Pergunta 9 -->
+                        <div class="pergunta-card" data-step="9">
+                            <label><i class="fa-solid fa-bed"></i> 9. Como costuma ser o seu nível de energia e foco na manhã seguinte após usar redes à noite?</label>
+                            <select id="p9" required>
+                                <option value="1">Acordo descansado e com mente clara</option>
+                                <option value="2">Leve preguiça, mas me concentro rápido</option>
+                                <option value="3">Sinto lentidão mental e cansaço visual</option>
+                                <option value="4">Acordo exausto e abro as redes ainda na cama</option>
+                            </select>
+                        </div>
+
+                        <!-- Pergunta 10 -->
+                        <div class="pergunta-card" data-step="10">
+                            <label><i class="fa-solid fa-hand"></i> 10. Você já tentou reduzir o uso de vídeos curtos mas sentiu impulso incontrolável de abrir o app novamente?</label>
+                            <select id="p10" required>
+                                <option value="1">Nunca tive dificuldades em controlar</option>
+                                <option value="2">Já tentei e consegui manter o limite facilmente</option>
+                                <option value="3">Tenho dificuldade e acabo voltando ao uso alto</option>
+                                <option value="4">Sinto dependência total do gesto de rolagem (swipe)</option>
+                            </select>
+                        </div>
+
+                        <!-- Controles de Navegação -->
+                        <div class="quiz-controles">
+                            <button type="button" id="btn-anterior" class="btn-quiz btn-secundario" onclick="mudarPasso(-1)" disabled>
+                                <i class="fa-solid fa-arrow-left"></i> Anterior
+                            </button>
+                            <button type="button" id="btn-proximo" class="btn-quiz" onclick="mudarPasso(1)">
+                                Próxima <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                            <button type="button" id="btn-finalizar" class="btn-quiz" style="display: none; background-color: #059669;" onclick="processarDiagnostico()">
+                                <i class="fa-solid fa-chart-line"></i> Finalizar & Gerar Plano Diário
+                            </button>
+                        </div>
+                    </form>
+                </div>
 
                 <!-- Painel de Resultados exibido após o teste -->
                 <div id="painel-resultados" class="painel-resultados">
                     <div class="card-diagnostico">
-                        <h4><i class="fa-solid fa-triangle-exclamation"></i> </h4>
+                        <h4><i class="fa-solid fa-triangle-exclamation"></i> Diagnóstico de Hábitos Cognitivos</h4>
                         <p id="resumo-nivel" style="font-weight: bold; margin-bottom: 0.5rem;"></p>
                         <p><strong>Problemas Identificados na sua rotina:</strong></p>
                         <ul id="lista-problemas" class="lista-problemas"></ul>
@@ -723,8 +983,8 @@
                     </div>
 
                     <div class="painel-tarefas">
-                        <h3><i class="fa-solid fa-calendar-check"></i> Suas Tarefas Diárias de Reabilitação Focada</h3>
-                        <p style="font-size: 0.88rem; color: #64748b; margin-bottom: 1.2rem;">Conclua as tarefas abaixo e marque-as como feitas. Amanhã, as tarefas concluídas darão lugar a novos desafios, enquanto as não concluídas permanecerão ativas!</p>
+                        <h3><i class="fa-solid fa-calendar-check"></i> Suas Tarefas Graduais de Reabilitação Focada</h3>
+                        <p style="font-size: 0.88rem; color: #64748b; margin-bottom: 1.2rem;">As tarefas abaixo foram calibradas com base no seu nível de risco (níveis mais fáceis/menos rigorosos para quem precisa recuperar o foco sem frustração, e avançados para quem já possui bom controle).</p>
 
                         <div id="container-tarefas"></div>
                     </div>
@@ -735,6 +995,13 @@
         <!-- REFERÊNCIAS -->
         <section id="referencias">
             <h2><i class="fa-solid fa-quote-right"></i> Referências Bibliográficas</h2>
+            
+            <p style="font-size: 0.95rem; font-weight: 600; color: var(--cor-primaria); margin-bottom: 1.2rem;">
+                <a href="Tcc (2).pdf" target="_blank" style="color: #dc2626; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+                    <i class="fa-solid fa-file-pdf"></i> Clique para abrir a Monografia Oficial Completa do TCC (PDF)
+                </a>
+            </p>
+
             <ul class="referencias">
                 <li>
                     <strong>BORLADO, M.</strong> O impacto das redes sociais na atenção dos jovens. Cadernos de Psicologia e Tecnologia, 2025.
@@ -771,18 +1038,43 @@
         <p>Trabalho de Conclusão de Curso (TCC) - Técnico em Informática Integrado ao Ensino Médio.</p>
     </footer>
 
-    <!-- LÓGICA DE EXECUÇÃO E RENDERIZAÇÃO DOS GRÁFICOS INTERATIVOS -->
+    <!-- LÓGICA DE EXECUÇÃO, QUIZ EM CARROSSEL E GRÁFICOS -->
     <script>
         Chart.defaults.font.family = "'Inter', sans-serif";
         Chart.defaults.color = "#475569";
+
+        let passoAtual = 1;
+        const totalPassos = 10;
 
         document.addEventListener("DOMContentLoaded", function() {
             initCharts();
             carregarEstadoSalvo();
         });
 
+        function mudarPasso(direcao) {
+            passoAtual += direcao;
+            if (passoAtual < 1) passoAtual = 1;
+            if (passoAtual > totalPassos) passoAtual = totalPassos;
+
+            document.querySelectorAll('.pergunta-card').forEach(card => card.classList.remove('active'));
+            document.querySelector(`.pergunta-card[data-step="${passoAtual}"]`).classList.add('active');
+
+            document.getElementById('quiz-passo-texto').innerText = `Pergunta ${passoAtual} de ${totalPassos}`;
+            const percentual = (passoAtual / totalPassos) * 100;
+            document.getElementById('barra-fill').style.width = `${percentual}%`;
+
+            document.getElementById('btn-anterior').disabled = (passoAtual === 1);
+
+            if (passoAtual === totalPassos) {
+                document.getElementById('btn-proximo').style.display = 'none';
+                document.getElementById('btn-finalizar').style.display = 'inline-flex';
+            } else {
+                document.getElementById('btn-proximo').style.display = 'inline-flex';
+                document.getElementById('btn-finalizar').style.display = 'none';
+            }
+        }
+
         function initCharts() {
-            // GRÁFICO 1: Perfil Demográfico
             const ctxIdade = document.getElementById('chartIdade').getContext('2d');
             new Chart(ctxIdade, {
                 type: 'pie',
@@ -796,21 +1088,9 @@
                         borderColor: '#ffffff'
                     }]
                 },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        tooltip: {
-                            callbacks: {
-                                label: ctx => ` ${ctx.label}: ${ctx.raw}% dos participantes`
-                            }
-                        },
-                        legend: { position: 'bottom' }
-                    }
-                }
+                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } } }
             });
 
-            // GRÁFICO 2: Tempo de Tela por Faixa Etária
             const ctxFaixa = document.getElementById('chartFaixaEtariaScreen').getContext('2d');
             new Chart(ctxFaixa, {
                 type: 'bar',
@@ -825,40 +1105,14 @@
                         { label: 'Mais de 4 horas', data: [18.8, 16.2, 25.0, 10.0, 5.0], backgroundColor: '#dc2626' }
                     ]
                 },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    interaction: { mode: 'index', intersect: false },
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            max: 40,
-                            ticks: { callback: v => v + '%' }
-                        }
-                    },
-                    plugins: {
-                        tooltip: {
-                            callbacks: {
-                                label: ctx => ` ${ctx.dataset.label}: ${ctx.raw}%`
-                            }
-                        },
-                        legend: { position: 'bottom' }
-                    }
-                }
+                options: { responsive: true, maintainAspectRatio: false, scales: { y: { beginAtZero: true, max: 40, ticks: { callback: v => v + '%' } } }, plugins: { legend: { position: 'bottom' } } }
             });
 
-            // GRÁFICO 3: Interferência nos Estudos
             const ctxInterf = document.getElementById('chartInterferencia').getContext('2d');
             new Chart(ctxInterf, {
                 type: 'doughnut',
                 data: {
-                    labels: [
-                        'Interfere bastante (29.2%)',
-                        'Interfere pouco (27.0%)',
-                        'Interfere moderadamente (25.8%)',
-                        'Interfere muito (13.5%)',
-                        'Não interfere (4.5%)'
-                    ],
+                    labels: ['Interfere bastante (29.2%)', 'Interfere pouco (27.0%)', 'Interfere moderadamente (25.8%)', 'Interfere muito (13.5%)', 'Não interfere (4.5%)'],
                     datasets: [{
                         data: [29.2, 27.0, 25.8, 13.5, 4.5],
                         backgroundColor: ['#2563eb', '#f59e0b', '#f97316', '#059669', '#8b5cf6'],
@@ -867,21 +1121,9 @@
                         borderColor: '#ffffff'
                     }]
                 },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        tooltip: {
-                            callbacks: {
-                                label: ctx => ` ${ctx.label}`
-                            }
-                        },
-                        legend: { position: 'bottom' }
-                    }
-                }
+                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } } }
             });
 
-            // GRÁFICO 4: Qualidade do Sono vs Tempo Diário
             const ctxSono = document.getElementById('chartSonoTempo').getContext('2d');
             new Chart(ctxSono, {
                 type: 'bar',
@@ -895,83 +1137,65 @@
                         { label: 'Muito ruim', data: [0.0, 5.0, 0.0, 5.3, 8.3, 33.3], backgroundColor: '#6366f1' }
                     ]
                 },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            max: 100,
-                            ticks: { callback: v => v + '%' }
-                        }
-                    },
-                    plugins: {
-                        tooltip: {
-                            callbacks: {
-                                label: ctx => ` ${ctx.dataset.label}: ${ctx.raw}%`
-                            }
-                        },
-                        legend: { position: 'bottom' }
-                    }
-                }
+                options: { responsive: true, maintainAspectRatio: false, scales: { y: { beginAtZero: true, max: 100, ticks: { callback: v => v + '%' } } }, plugins: { legend: { position: 'bottom' } } }
             });
         }
 
-        // LÓGICA DO DIAGNÓSTICO E TAREFAS DIÁRIAS (LOCALSTORAGE)
-        const bancoTarefas = [
-            "Ler 10 páginas de um livro físico sem colocar o celular por perto.",
-            "Desativar todas as notificações de redes sociais durante a tarde.",
-            "Deixar o celular em outro cômodo 30 minutos antes de ir dormir.",
-            "Estudar por 25 minutos seguidos usando a Técnica Pomodoro (foco total).",
-            "Ativar o modo 'Tons de Cinza' (Grayscale) na tela do smartphone.",
-            "Fazer uma refeição completa sem olhar para nenhuma tela.",
-            "Praticar a regra 20-20-20: A cada 20 min de tela, olhe para algo a 6 metros por 20 seg.",
-            "Apagar o aplicativo de vídeos curtos por 24 horas como teste de disciplina.",
-            "Substituir o scroll noturno por uma leitura em luz amarela ou podcast relaxante."
-        ];
+        // BANCO DE TAREFAS SEPARADO POR NÍVEL DE RIGOR (MICRO-HÁBITOS GRADUAIS)
+        const tarefasPorNivel = {
+            alto: [
+                { texto: "Deixar o celular em outro cômodo por apenas 10 minutos hoje.", rigor: "Iniciante (Baixo Atrito)" },
+                { texto: "Desativar as notificações de apenas 1 aplicativo de vídeos curtos.", rigor: "Iniciante (Baixo Atrito)" },
+                { texto: "Fazer uma refeição rápida de 5 minutos sem olhar para o celular.", rigor: "Iniciante (Baixo Atrito)" }
+            ],
+            moderado: [
+                { texto: "Estudar ou ler por 20 minutos seguidos sem checar o celular.", rigor: "Intermediário" },
+                { texto: "Colocar o celular no modo avião 30 minutos antes de ir dormir.", rigor: "Intermediário" },
+                { texto: "Fazer uma caminhada curta de 15 minutos sem levar o smartphone.", rigor: "Intermediário" }
+            ],
+            baixo: [
+                { texto: "Ativar o modo 'Tons de Cinza' (Grayscale) na tela do smartphone o dia todo.", rigor: "Avançado / Rigoroso" },
+                { texto: "Ler 15 páginas seguidas de um livro físico em silêncio absoluto.", rigor: "Avançado / Rigoroso" },
+                { texto: "Ficar 24 horas completas sem abrir nenhum aplicativo de vídeos curtos.", rigor: "Avançado / Rigoroso" }
+            ]
+        };
 
         function processarDiagnostico() {
-            const p1 = parseInt(document.getElementById('p1').value);
-            const p2 = parseInt(document.getElementById('p2').value);
-            const p3 = parseInt(document.getElementById('p3').value);
-            const p4 = parseInt(document.getElementById('p4').value);
+            let somaPontos = 0;
+            for (let i = 1; i <= totalPassos; i++) {
+                somaPontos += parseInt(document.getElementById(`p${i}`).value);
+            }
 
-            const somaPontos = p1 + p2 + p3 + p4;
             let problemas = [];
             let nivel = "";
             let orientacao = "";
+            let categoriaRisco = "";
 
-            if (p1 >= 3) problemas.push("Exposição excessiva a picos de dopamina variáveis pelo alto tempo de tela.");
-            if (p2 >= 3) problemas.push("Déficit severo de Atenção Sustentada e enfraquecimento da memória de trabalho.");
-            if (p3 >= 3) problemas.push("Inibição da produção de melatonina devido à luz azul e hiperestimulação noturna.");
-            if (p4 >= 3) problemas.push("Condicionamento da busca compulsiva por recompensas instantâneas (tolerância dopaminérgica).");
-
-            if (somaPontos <= 6) {
+            if (somaPontos <= 15) {
                 nivel = "Nível de Risco: BAIXO";
-                orientacao = "Você apresenta bons hábitos de higiene digital! Continue mantendo seus limites de tela para proteger sua capacidade de atenção.";
-            } else if (somaPontos <= 11) {
+                categoriaRisco = "baixo";
+                orientacao = "Você apresenta ótimos hábitos de higiene digital! Suas tarefas focam em manter o controle e consolidar sua atenção plena.";
+            } else if (somaPontos <= 28) {
                 nivel = "Nível de Risco: MODERADO";
-                orientacao = "Atenção! Seus hábitos atuais já demonstram sinais de fragmentação cognitiva. Siga o plano de tarefas abaixo para restaurar seu foco.";
+                categoriaRisco = "moderado";
+                orientacao = "Seus hábitos demonstram sinais intermediários de fragmentação cognitiva. O plano abaixo traz tarefas equilibradas para resgatar o seu foco.";
             } else {
                 nivel = "Nível de Risco: ALTO (Fragmentação Cognitiva Severa)";
-                orientacao = "Alerta Vermelho! O consumo descontrolado está prejudicando ativamente seus estudos e sono. É crucial implementar as tarefas diárias abaixo de imediato.";
+                categoriaRisco = "alto";
+                orientacao = "Alerta! Para evitar frustração e abandono, selecionamos micro-hábitos de baixíssimo atrito. Comece devagar para readaptar seu sistema neural.";
             }
 
-            if (problemas.length === 0) {
-                problemas.push("Nenhum problema grave detectado no momento. Mantenha a vigilância contra o uso passivo.");
-            }
+            problemas.push("Análise calculada com base nas 10 dimensões de comportamento digital e descanso.");
 
-            const tarefasIniciais = [
-                { id: 0, texto: bancoTarefas[0], concluida: false },
-                { id: 1, texto: bancoTarefas[1], concluida: false },
-                { id: 2, texto: bancoTarefas[2], concluida: false }
-            ];
+            // Seleciona as tarefas correspondentes ao nível de risco do usuário
+            const pool = tarefasPorNivel[categoriaRisco];
+            const tarefasIniciais = pool.map((t, idx) => ({ id: idx, texto: t.texto, rigor: t.rigor, concluida: false }));
 
             const hoje = new Date().toISOString().split('T')[0];
-
             const estado = {
                 dataUltimoAcesso: hoje,
                 nivel: nivel,
+                categoria: categoriaRisco,
                 problemas: problemas,
                 orientacao: orientacao,
                 tarefas: tarefasIniciais
@@ -990,17 +1214,16 @@
             const hojeSistema = new Date().toISOString().split('T')[0];
 
             if (dataSalvaNoStorage !== hojeSistema) {
+                // Roda nova tarefa se o dia mudou e a anterior foi concluída
                 estado.tarefas = estado.tarefas.map((t) => {
                     if (t.concluida) {
-                        const tarefasAtuaisTextos = estado.tarefas.map(x => x.texto);
-                        const disponiveis = bancoTarefas.filter(bt => !tarefasAtuaisTextos.includes(bt));
-                        const novoTexto = disponiveis[Math.floor(Math.random() * disponiveis.length)] || bancoTarefas[0];
-                        return { id: Math.random(), texto: novoTexto, concluida: false };
-                    } else {
-                        return t;
+                        const poolNivel = tarefasPorNivel[estado.categoria || 'moderado'];
+                        const disponiveis = poolNivel.filter(pt => pt.texto !== t.texto);
+                        const sorteada = disponiveis[Math.floor(Math.random() * disponiveis.length)] || poolNivel[0];
+                        return { id: Math.random(), texto: sorteada.texto, rigor: sorteada.rigor, concluida: false };
                     }
+                    return t;
                 });
-
                 estado.dataUltimoAcesso = hojeSistema;
                 localStorage.setItem('tcc_app_estado', JSON.stringify(estado));
             }
@@ -1035,9 +1258,16 @@
             containerTarefas.innerHTML = '';
 
             estado.tarefas.forEach((tarefa, index) => {
+                let badgeClass = "badge-moderado";
+                if (tarefa.rigor && tarefa.rigor.includes("Iniciante")) badgeClass = "badge-alto";
+                if (tarefa.rigor && tarefa.rigor.includes("Avançado")) badgeClass = "badge-baixo";
+
                 const div = document.createElement('div');
                 div.className = `tarefa-item ${tarefa.concluida ? 'concluida' : ''}`;
                 div.innerHTML = `
+                    <div style="width: 100%; display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                        <span class="badge-nivel ${badgeClass}">${tarefa.rigor || 'Hábito Diário'}</span>
+                    </div>
                     <span class="tarefa-texto"><i class="fa-solid fa-circle-check" style="color: ${tarefa.concluida ? '#059669' : '#94a3b8'}; margin-right: 8px;"></i> ${tarefa.texto}</span>
                     <button class="btn-check" onclick="alternarTarefa(${index})">
                         ${tarefa.concluida ? '✓ Concluída' : 'Marcar como Feita'}
