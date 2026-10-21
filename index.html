@@ -984,7 +984,7 @@
 
                     <div class="painel-tarefas">
                         <h3><i class="fa-solid fa-calendar-check"></i> Suas Tarefas Graduais de Reabilitação Focada</h3>
-                        <p style="font-size: 0.88rem; color: #64748b; margin-bottom: 1.2rem;">As tarefas abaixo foram calibradas com base no seu nível de risco (níveis mais fáceis/menos rigorosos para quem precisa recuperar o foco sem frustração, e avançados para quem já possui bom controle).</p>
+                        <p style="font-size: 0.88rem; color: #64748b; margin-bottom: 1.2rem;">As tarefas abaixo foram calibradas com base no seu nível de risco. O sistema alterna diariamente entre as 9 tarefas do seu banco exclusivo para garantir progresso contínuo!</p>
 
                         <div id="container-tarefas"></div>
                     </div>
@@ -1141,22 +1141,40 @@
             });
         }
 
-        // BANCO DE TAREFAS SEPARADO POR NÍVEL DE RIGOR (MICRO-HÁBITOS GRADUAIS)
+        // BANCO DE 27 TAREFAS (9 TAREFAS EXCLUSIVAS PARA CADA NÍVEL DE RISCO)
         const tarefasPorNivel = {
             alto: [
-                { texto: "Deixar o celular em outro cômodo por apenas 10 minutos hoje.", rigor: "Iniciante (Baixo Atrito)" },
-                { texto: "Desativar as notificações de apenas 1 aplicativo de vídeos curtos.", rigor: "Iniciante (Baixo Atrito)" },
-                { texto: "Fazer uma refeição rápida de 5 minutos sem olhar para o celular.", rigor: "Iniciante (Baixo Atrito)" }
+                { texto: "Deixar o telemóvel noutro cómodo durante apenas 10 minutos.", rigor: "Iniciante (Baixo Atrito)" },
+                { texto: "Desativar as notificações de 1 aplicação de vídeos curtos.", rigor: "Iniciante (Baixo Atrito)" },
+                { texto: "Fazer uma refeição rápida de 5 minutos sem olhar para o ecram.", rigor: "Iniciante (Baixo Atrito)" },
+                { texto: "Colocar o telemóvel virado para baixo durante o estudo ou aula.", rigor: "Iniciante (Baixo Atrito)" },
+                { texto: "Assistir a um vídeo longo de 5 minutos sem mudar de separador.", rigor: "Iniciante (Baixo Atrito)" },
+                { texto: "Aguardar 2 minutos antes de responder a uma notificação sonora.", rigor: "Iniciante (Baixo Atrito)" },
+                { texto: "Remover o atalho da rede social da página principal do telemóvel.", rigor: "Iniciante (Baixo Atrito)" },
+                { texto: "Beber um copo de água e respirar fundo antes de abrir o TikTok/Reels.", rigor: "Iniciante (Baixo Atrito)" },
+                { texto: "Desligar o wi-fi do telemóvel durante 15 minutos enquanto descansa.", rigor: "Iniciante (Baixo Atrito)" }
             ],
             moderado: [
-                { texto: "Estudar ou ler por 20 minutos seguidos sem checar o celular.", rigor: "Intermediário" },
-                { texto: "Colocar o celular no modo avião 30 minutos antes de ir dormir.", rigor: "Intermediário" },
-                { texto: "Fazer uma caminhada curta de 15 minutos sem levar o smartphone.", rigor: "Intermediário" }
+                { texto: "Estudar ou ler por 20 minutos seguidos sem checar o telemóvel.", rigor: "Intermediário" },
+                { texto: "Colocar o telemóvel no modo avião 30 minutos antes de ir dormir.", rigor: "Intermediário" },
+                { texto: "Fazer uma caminhada curta de 15 minutos sem levar o smartphone.", rigor: "Intermediário" },
+                { texto: "Praticar a Técnica Pomodoro: 25 minutos de foco total numa tarefa.", rigor: "Intermediário" },
+                { texto: "Ler 5 páginas de um livro físico sem distrações visuais.", rigor: "Intermediário" },
+                { texto: "Organizar a mesa de trabalho/estudo mantendo o telemóvel longe.", rigor: "Intermediário" },
+                { texto: "Desativar a reprodução automática de vídeos nas definições dos apps.", rigor: "Intermediário" },
+                { texto: "Substituir 15 minutos de scroll noturno por ouvir um podcast relaxante.", rigor: "Intermediário" },
+                { texto: "Definir um temporizador de limite de 1 hora no app de vídeos curtos.", rigor: "Intermediário" }
             ],
             baixo: [
-                { texto: "Ativar o modo 'Tons de Cinza' (Grayscale) na tela do smartphone o dia todo.", rigor: "Avançado / Rigoroso" },
+                { texto: "Ativar o modo 'Tons de Cinza' (Grayscale) no ecrã o dia todo.", rigor: "Avançado / Rigoroso" },
                 { texto: "Ler 15 páginas seguidas de um livro físico em silêncio absoluto.", rigor: "Avançado / Rigoroso" },
-                { texto: "Ficar 24 horas completas sem abrir nenhum aplicativo de vídeos curtos.", rigor: "Avançado / Rigoroso" }
+                { texto: "Ficar 24 horas completas sem abrir redes de vídeos curtos.", rigor: "Avançado / Rigoroso" },
+                { texto: "Realizar um bloco de estudo profundo de 50 minutos sem interrupções.", rigor: "Avançado / Rigoroso" },
+                { texto: "Assistir a um filme/documentário completo de 1h30 sem tocar no telemóvel.", rigor: "Avançado / Rigoroso" },
+                { texto: "Manter o telemóvel fora do quarto durante toda a noite de sono.", rigor: "Avançado / Rigoroso" },
+                { texto: "Passar uma manhã ou tarde inteira (4h) sem checar redes sociais.", rigor: "Avançado / Rigoroso" },
+                { texto: "Escrever um resumo à mão de 1 página sobre uma leitura efetuada.", rigor: "Avançado / Rigoroso" },
+                { texto: "Desinstalar o aplicativo de vídeos curtos durante o fim de semana.", rigor: "Avançado / Rigoroso" }
             ]
         };
 
@@ -1174,22 +1192,28 @@
             if (somaPontos <= 15) {
                 nivel = "Nível de Risco: BAIXO";
                 categoriaRisco = "baixo";
-                orientacao = "Você apresenta ótimos hábitos de higiene digital! Suas tarefas focam em manter o controle e consolidar sua atenção plena.";
+                orientacao = "Apresentas ótimos hábitos de higiene digital! As tuas tarefas focam-se em manter o controlo e consolidar a tua atenção plena.";
             } else if (somaPontos <= 28) {
                 nivel = "Nível de Risco: MODERADO";
                 categoriaRisco = "moderado";
-                orientacao = "Seus hábitos demonstram sinais intermediários de fragmentação cognitiva. O plano abaixo traz tarefas equilibradas para resgatar o seu foco.";
+                orientacao = "Os teus hábitos demonstram sinais intermediários de fragmentação cognitiva. O plano abaixo traz tarefas equilibradas para resgatar o teu foco.";
             } else {
                 nivel = "Nível de Risco: ALTO (Fragmentação Cognitiva Severa)";
                 categoriaRisco = "alto";
-                orientacao = "Alerta! Para evitar frustração e abandono, selecionamos micro-hábitos de baixíssimo atrito. Comece devagar para readaptar seu sistema neural.";
+                orientacao = "Alerta! Para evitar frustração e abandono, selecionámos micro-hábitos de baixíssimo atrito. Começa devagar para readaptar o teu sistema neural.";
             }
 
             problemas.push("Análise calculada com base nas 10 dimensões de comportamento digital e descanso.");
 
-            // Seleciona as tarefas correspondentes ao nível de risco do usuário
+            // Seleciona 3 tarefas iniciais aleatórias do banco de 9 do respetivo nível
             const pool = tarefasPorNivel[categoriaRisco];
-            const tarefasIniciais = pool.map((t, idx) => ({ id: idx, texto: t.texto, rigor: t.rigor, concluida: false }));
+            const embaralhadas = [...pool].sort(() => 0.5 - Math.random());
+            const tarefasIniciais = embaralhadas.slice(0, 3).map((t, idx) => ({
+                id: idx,
+                texto: t.texto,
+                rigor: t.rigor,
+                concluida: false
+            }));
 
             const hoje = new Date().toISOString().split('T')[0];
             const estado = {
@@ -1214,11 +1238,13 @@
             const hojeSistema = new Date().toISOString().split('T')[0];
 
             if (dataSalvaNoStorage !== hojeSistema) {
-                // Roda nova tarefa se o dia mudou e a anterior foi concluída
+                const poolNivel = tarefasPorNivel[estado.categoria || 'moderado'];
+                
+                // Roda novas tarefas do banco de 9 para as que foram concluídas
                 estado.tarefas = estado.tarefas.map((t) => {
                     if (t.concluida) {
-                        const poolNivel = tarefasPorNivel[estado.categoria || 'moderado'];
-                        const disponiveis = poolNivel.filter(pt => pt.texto !== t.texto);
+                        const textosAtuais = estado.tarefas.map(x => x.texto);
+                        const disponiveis = poolNivel.filter(pt => !textosAtuais.includes(pt.texto));
                         const sorteada = disponiveis[Math.floor(Math.random() * disponiveis.length)] || poolNivel[0];
                         return { id: Math.random(), texto: sorteada.texto, rigor: sorteada.rigor, concluida: false };
                     }
