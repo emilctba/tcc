@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Impactos do Consumo Excessivo de Vídeos Curtos na Fragmentação Cognitiva dos Jovens</title>
     
     <!-- Google Fonts -->
@@ -28,6 +28,11 @@
             --cor-sucesso: #059669; /* Emerald 600 */
         }
 
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -37,38 +42,46 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            line-height: 1.8;
+            line-height: 1.7;
             color: var(--cor-texto);
             background-color: var(--cor-fundo);
         }
 
-        /* Navbar Moderna */
+        /* Navbar Moderna com Scroll Horizontal Suave no Mobile */
         nav {
-            background-color: rgba(15, 23, 42, 0.92);
+            background-color: rgba(15, 23, 42, 0.95);
             backdrop-filter: blur(12px);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            padding: 0.9rem 2rem;
+            padding: 0.8rem 1rem;
             display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
+            justify-content: flex-start;
+            gap: 0.8rem;
+            flex-wrap: nowrap;
+            overflow-x: auto;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            -webkit-overflow-scrolling: touch;
+        }
+
+        nav::-webkit-scrollbar {
+            display: none;
         }
 
         nav a {
             color: #cbd5e1;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.82rem;
+            font-size: 0.78rem;
             text-transform: uppercase;
-            letter-spacing: 1.2px;
+            letter-spacing: 1px;
             transition: all 0.3s ease;
-            padding: 4px 8px;
-            border-radius: 4px;
+            padding: 6px 12px;
+            border-radius: 6px;
+            white-space: nowrap;
+            flex-shrink: 0;
         }
 
         nav a:hover {
@@ -81,87 +94,94 @@
             background: linear-gradient(135deg, var(--cor-primaria) 0%, #1e293b 100%);
             color: white;
             text-align: center;
-            padding: 10rem 1.5rem 7rem 1.5rem;
-            clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
+            padding: 8rem 1rem 5rem 1rem;
+            clip-path: polygon(0 0, 100% 0, 100% 97%, 0 100%);
             box-shadow: inset 0 -20px 30px rgba(0,0,0,0.2);
+            word-wrap: break-word;
         }
 
         .instituicao {
-            font-size: 0.85rem;
+            font-size: 0.78rem;
             text-transform: uppercase;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             color: #60a5fa;
-            margin-bottom: 1.2rem;
+            margin-bottom: 1rem;
             display: block;
             font-weight: 600;
+            padding: 0 0.5rem;
         }
 
         header h1 {
-            font-size: 2.8rem;
+            font-size: 2.2rem;
             font-weight: 800;
-            max-width: 1050px;
+            max-width: 1000px;
             margin: 0 auto;
-            line-height: 1.25;
+            line-height: 1.3;
             letter-spacing: -0.5px;
             text-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            padding: 0 0.5rem;
         }
 
         .subtitulo {
-            font-size: 1.15rem;
+            font-size: 0.98rem;
             color: #94a3b8;
-            margin-top: 1.5rem;
+            margin-top: 1.2rem;
             font-weight: 300;
+            padding: 0 0.8rem;
+            line-height: 1.5;
         }
 
         .autores {
-            margin-top: 2.8rem;
+            margin-top: 2rem;
             display: inline-flex;
-            gap: 1.5rem;
+            gap: 0.8rem;
             background: rgba(255, 255, 255, 0.06);
-            padding: 0.8rem 1.8rem;
-            border-radius: 50px;
+            padding: 0.8rem 1.2rem;
+            border-radius: 24px;
             backdrop-filter: blur(8px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             flex-wrap: wrap;
             justify-content: center;
+            max-width: 100%;
         }
 
         .autores a {
             color: #f8fafc;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.92rem;
+            font-size: 0.88rem;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
             transition: all 0.3s ease;
-            padding: 6px 14px;
-            border-radius: 20px;
+            padding: 5px 10px;
+            border-radius: 16px;
         }
 
         .autores a:hover {
             color: #ffffff;
             background-color: var(--cor-secundaria);
             box-shadow: 0 0 15px rgba(37, 99, 235, 0.5);
-            transform: translateY(-2px);
         }
 
         /* Botão do PDF */
         .btn-pdf {
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 10px;
             background-color: #dc2626;
             color: white;
-            padding: 0.7rem 1.5rem;
+            padding: 0.8rem 1.4rem;
             border-radius: 30px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.95rem;
-            margin-top: 2rem;
+            font-size: 0.9rem;
+            margin-top: 1.8rem;
             box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
             transition: all 0.3s ease;
             border: 1px solid rgba(255,255,255,0.2);
+            max-width: 90%;
         }
 
         .btn-pdf:hover {
@@ -174,29 +194,29 @@
         /* Container Principal */
         main {
             max-width: 1100px;
-            margin: -2rem auto 0 auto;
-            padding: 0 1.5rem;
+            margin: -1.5rem auto 0 auto;
+            padding: 0 1rem;
             position: relative;
             z-index: 10;
         }
 
         section {
             background: var(--cor-card);
-            padding: 3.5rem;
-            margin-bottom: 2.5rem;
-            border-radius: 20px;
+            padding: 2.2rem 1.2rem;
+            margin-bottom: 2rem;
+            border-radius: 16px;
             box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
             border: 1px solid var(--cor-borda);
-            transition: transform 0.3s ease;
+            word-wrap: break-word;
         }
 
         h2 {
             color: var(--cor-primaria);
-            font-size: 1.85rem;
-            margin-bottom: 1.8rem;
+            font-size: 1.5rem;
+            margin-bottom: 1.4rem;
             display: flex;
             align-items: center;
-            gap: 14px;
+            gap: 10px;
             font-weight: 700;
             letter-spacing: -0.5px;
         }
@@ -210,83 +230,80 @@
             flex: 1;
             height: 2px;
             background: linear-gradient(to right, var(--cor-secundaria), transparent);
-            margin-left: 15px;
+            margin-left: 10px;
             opacity: 0.3;
         }
 
         h3 {
             color: var(--cor-primaria);
-            font-size: 1.3rem;
-            margin: 2rem 0 1rem 0;
+            font-size: 1.15rem;
+            margin: 1.5rem 0 0.8rem 0;
             font-weight: 600;
         }
 
         p {
-            margin-bottom: 1.3rem;
+            margin-bottom: 1.1rem;
             text-align: justify;
-            font-size: 1.05rem;
+            font-size: 0.98rem;
             color: #475569;
         }
 
         /* Destaques conceituais */
         .destaque-box {
             background: #eff6ff;
-            border-left: 5px solid var(--cor-secundaria);
-            padding: 1.5rem 1.8rem;
-            border-radius: 0 12px 12px 0;
-            margin: 1.8rem 0;
+            border-left: 4px solid var(--cor-secundaria);
+            padding: 1.2rem;
+            border-radius: 0 10px 10px 0;
+            margin: 1.5rem 0;
             font-style: italic;
             color: #1e3a8a;
+            font-size: 0.95rem;
         }
 
         /* Grid de Gráficos Dinâmicos */
         .graficos-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 2.5rem;
-            margin-top: 2rem;
+            gap: 2rem;
+            margin-top: 1.5rem;
         }
 
         .grafico-card {
             background: #f8fafc;
-            padding: 2.2rem;
-            border-radius: 16px;
+            padding: 1.2rem 0.5rem;
+            border-radius: 14px;
             border: 1px solid var(--cor-borda);
-            transition: all 0.3s ease;
             box-shadow: 0 4px 12px rgba(0,0,0,0.02);
-        }
-
-        .grafico-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 28px rgba(0,0,0,0.06);
-            border-color: #cbd5e1;
+            width: 100%;
+            overflow: hidden;
         }
 
         .grafico-card h3 {
             color: var(--cor-primaria);
-            font-size: 1.25rem;
-            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+            margin-bottom: 1rem;
             text-align: center;
+            padding: 0 0.5rem;
         }
 
         .chart-wrapper {
             position: relative;
             width: 100%;
-            max-width: 750px;
+            max-width: 100%;
             margin: 0 auto;
-            min-height: 330px;
+            height: 260px;
         }
 
         .grafico-legenda {
             text-align: left;
-            font-size: 0.92rem;
+            font-size: 0.85rem;
             color: #475569;
-            margin-top: 1.5rem;
+            margin-top: 1.2rem;
             font-style: italic;
             background: #ffffff;
-            padding: 14px 20px;
-            border-left: 4px solid var(--cor-secundaria);
-            border-radius: 8px;
+            padding: 10px 12px;
+            border-left: 3px solid var(--cor-secundaria);
+            border-radius: 6px;
             box-shadow: 0 2px 6px rgba(0,0,0,0.02);
             border: 1px solid var(--cor-borda);
         }
@@ -294,151 +311,116 @@
         /* Área Interativa da Plataforma */
         .app-container {
             background: #f8fafc;
-            border: 2px solid #e2e8f0;
-            border-radius: 18px;
-            padding: 2.5rem;
-            margin-top: 1.8rem;
-            box-shadow: inset 0 2px 6px rgba(0,0,0,0.02);
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+            padding: 1.2rem 0.8rem;
+            margin-top: 1.5rem;
         }
 
         .pergunta-group {
             background: white;
-            padding: 1.8rem;
-            border-radius: 12px;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            padding: 1.2rem 1rem;
+            border-radius: 10px;
+            margin-bottom: 1.2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
             border: 1px solid var(--cor-borda);
         }
 
         .pergunta-group label {
             font-weight: 600;
             display: block;
-            margin-bottom: 0.9rem;
+            margin-bottom: 0.8rem;
             color: var(--cor-primaria);
-            font-size: 1.05rem;
+            font-size: 0.95rem;
         }
 
         .pergunta-group select {
             width: 100%;
-            padding: 0.9rem 1rem;
+            padding: 0.8rem;
             border-radius: 8px;
             border: 1px solid #cbd5e1;
             font-family: 'Inter', sans-serif;
-            font-size: 1rem;
+            font-size: 0.9rem;
             background-color: #f8fafc;
             color: var(--cor-texto);
-            transition: border-color 0.2s;
-        }
-
-        .pergunta-group select:focus {
-            outline: none;
-            border-color: var(--cor-secundaria);
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
         }
 
         .btn-acao {
             background-color: var(--cor-secundaria);
             color: white;
             font-weight: 700;
-            padding: 1.1rem 2rem;
+            padding: 1rem;
             border: none;
             border-radius: 10px;
             cursor: pointer;
             width: 100%;
-            font-size: 1.05rem;
+            font-size: 0.98rem;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
         }
 
-        .btn-acao:hover {
-            background-color: #1d4ed8;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
-        }
-
         .painel-resultados {
             display: none;
-            margin-top: 2.5rem;
-            animation: fadeIn 0.5s ease-in-out;
+            margin-top: 2rem;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Card de Diagnóstico Dinâmico */
         .card-diagnostico {
             background: #fff;
-            padding: 2rem;
-            border-radius: 14px;
-            margin-bottom: 2rem;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.05);
-            border-left: 6px solid #cbd5e1;
+            padding: 1.2rem;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border-left: 5px solid #cbd5e1;
             border: 1px solid var(--cor-borda);
-            transition: all 0.3s ease;
         }
 
         .card-diagnostico.risco-baixo {
             border-left-color: var(--cor-sucesso);
             background-color: #ecfdf5;
         }
-        .card-diagnostico.risco-baixo h4 {
-            color: #047857;
-        }
+        .card-diagnostico.risco-baixo h4 { color: #047857; }
 
         .card-diagnostico.risco-moderado {
             border-left-color: #d97706;
             background-color: #fffbeb;
         }
-        .card-diagnostico.risco-moderado h4 {
-            color: #b45309;
-        }
+        .card-diagnostico.risco-moderado h4 { color: #b45309; }
 
         .card-diagnostico.risco-alto {
             border-left-color: var(--cor-destaque);
             background-color: #fef2f2;
         }
-        .card-diagnostico.risco-alto h4 {
-            color: var(--cor-destaque);
-        }
+        .card-diagnostico.risco-alto h4 { color: var(--cor-destaque); }
 
         .card-diagnostico h4 {
-            font-size: 1.35rem;
+            font-size: 1.15rem;
             margin-bottom: 0.8rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
         }
 
         .lista-problemas {
-            margin-left: 1.4rem;
-            margin-bottom: 1.2rem;
-            color: #334155;
-        }
-
-        .lista-problemas li {
-            margin-bottom: 0.5rem;
+            margin-left: 1.2rem;
+            margin-bottom: 1rem;
+            font-size: 0.92rem;
         }
 
         .painel-tarefas {
             background: white;
-            border-radius: 14px;
-            padding: 2rem;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+            border-radius: 12px;
+            padding: 1.2rem 1rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
             border: 1px solid var(--cor-borda);
         }
 
         .tarefa-item {
             display: flex;
-            align-items: center;
-            justify-content: space-between;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.8rem;
             background: #f8fafc;
-            padding: 1.1rem 1.4rem;
+            padding: 1rem;
             border-radius: 10px;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
             border: 1px solid var(--cor-borda);
-            transition: all 0.2s;
         }
 
         .tarefa-item.concluida {
@@ -450,24 +432,20 @@
 
         .tarefa-texto {
             font-weight: 500;
-            font-size: 1rem;
+            font-size: 0.92rem;
             color: #1e293b;
         }
 
         .btn-check {
+            width: 100%;
             background: #e2e8f0;
             border: none;
-            padding: 0.6rem 1.2rem;
-            border-radius: 8px;
+            padding: 0.6rem;
+            border-radius: 6px;
             cursor: pointer;
             font-weight: 600;
             color: #475569;
-            transition: all 0.2s;
-            font-size: 0.9rem;
-        }
-
-        .btn-check:hover {
-            background: #cbd5e1;
+            font-size: 0.88rem;
         }
 
         .tarefa-item.concluida .btn-check {
@@ -475,21 +453,22 @@
             color: white;
         }
 
-        /* Referências Oficiais do TCC (Sem Links) */
+        /* Referências Oficiais */
         .referencias {
             list-style: none;
         }
 
         .referencias li {
-            margin-bottom: 1.6rem;
+            margin-bottom: 1.2rem;
             background: #f8fafc;
-            padding: 1.3rem 1.3rem 1.3rem 3.2rem;
+            padding: 1rem 1rem 1rem 2.8rem;
             border-radius: 10px;
             border-left: 4px solid var(--cor-secundaria);
             position: relative;
             border: 1px solid var(--cor-borda);
             border-left-width: 4px;
-            font-size: 0.98rem;
+            font-size: 0.88rem;
+            word-break: break-word;
         }
 
         .referencias li::before {
@@ -497,46 +476,73 @@
             font-family: 'Font Awesome 6 Free';
             font-weight: 900;
             position: absolute;
-            left: 1.2rem;
+            left: 1rem;
             color: var(--cor-secundaria);
-            top: 1.4rem;
-        }
-
-        .referencias strong {
-            color: var(--cor-primaria);
+            top: 1.1rem;
         }
 
         /* Rodapé Institucional */
         footer {
             text-align: center;
-            padding: 4rem 1.5rem;
+            padding: 3rem 1rem;
             background: var(--cor-primaria);
             color: #94a3b8;
-            margin-top: 5rem;
-            border-top: 1px solid rgba(255,255,255,0.05);
+            margin-top: 3rem;
+            font-size: 0.88rem;
         }
 
         footer strong { color: white; }
 
         footer a.lattes-link {
-            color: #94a3b8;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
-        footer a.lattes-link:hover {
             color: #60a5fa;
-            text-decoration: underline;
+            text-decoration: none;
         }
 
+        /* AJUSTES RESPONSIVOS ESPECÍFICOS PARA TELEMÓVEIS (MENOS DE 768px) */
         @media (max-width: 768px) {
-            header h1 { font-size: 2.1rem; }
-            .autores { flex-direction: column; gap: 0.8rem; }
-            nav { padding: 0.6rem; }
-            nav a { font-size: 0.75rem; }
-            section { padding: 2rem 1.2rem; }
-            .tarefa-item { flex-direction: column; align-items: flex-start; gap: 0.8rem; }
-            .btn-check { width: 100%; }
+            header {
+                padding: 6.5rem 0.8rem 4rem 0.8rem;
+            }
+
+            header h1 {
+                font-size: 1.65rem;
+                line-height: 1.35;
+            }
+
+            .instituicao {
+                font-size: 0.72rem;
+                letter-spacing: 1.5px;
+            }
+
+            .subtitulo {
+                font-size: 0.88rem;
+            }
+
+            .autores {
+                flex-direction: column;
+                align-items: stretch;
+                width: 100%;
+                border-radius: 16px;
+                padding: 0.8rem;
+            }
+
+            .autores a {
+                justify-content: center;
+                width: 100%;
+            }
+
+            section {
+                padding: 1.8rem 1rem;
+                border-radius: 14px;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+
+            .chart-wrapper {
+                height: 240px;
+            }
         }
     </style>
 </head>
@@ -544,10 +550,10 @@
 
     <nav>
         <a href="#introducao">Introdução</a>
-        <a href="#teoria">Fundamentação</a>
-        <a href="#metodologia">Metodologia</a>
-        <a href="#resultados">Resultados (89 Amostras)</a>
-        <a href="#pratica">Plataforma Interativa</a>
+        <a href="#neuroplasticidade">Neuroplasticidade</a>
+        <a href="#dados">Dados & Gráficos</a>
+        <a href="#impactos">Impactos</a>
+        <a href="#solucoes">Soluções</a>
         <a href="#referencias">Referências</a>
     </nav>
 
@@ -578,7 +584,7 @@
     <main>
         <!-- INTRODUÇÃO -->
         <section id="introducao">
-            <h2><i class="fa-solid fa-book-open-reader"></i> Contextualização e Problematização</h2>
+            <h2><i class="fa-solid fa-book-open-reader"></i> Introdução</h2>
             <p>Nos últimos anos, a expansão e o avanço contínuo das tecnologias digitais transformaram profundamente os padrões de consumo de informação e entretenimento, especialmente entre o público jovem. A ascensão de plataformas baseadas na distribuição de vídeos curtos como TikTok, Instagram Reels e YouTube Shorts popularizou um formato de mídia caracterizado por conteúdos de curta duração, que oferecem um fluxo contínuo e acelerado de estímulos visuais e auditivos.</p>
             <p>Apesar do entretenimento, a exposição frequente a esses estímulos virtuais desperta crescentes preocupações neurocognitivas. O consumo contínuo ativa intensamente o sistema de recompensa cerebral, promovendo descargas frequentes de dopamina. Consolida-se assim o fenômeno da <strong>fragmentação cognitiva</strong>: a dificuldade em manter a atenção contínua em uma única atividade, acompanhada por redução na memória de trabalho e estado de atenção parcial constante.</p>
             
@@ -587,32 +593,18 @@
             </div>
         </section>
 
-        <!-- FUNDAMENTAÇÃO TEÓRICA -->
-        <section id="teoria">
-            <h2><i class="fa-solid fa-brain"></i> Fundamentação Teórica</h2>
-            <h3>O Avanço das Mídias Digitais e o Formato de Vídeos Curtos</h3>
-            <p>O formato de vídeos curtos com alta densidade de estímulos visuais e auditivos foi desenhado por algoritmos de recomendação altamente personalizados para maximizar o tempo de retenção. De acordo com a literatura, o fluxo contínuo elimina pausas naturais de reflexão, estimulando navegação passiva e automática em adolescentes e jovens.</p>
-
-            <h3>Mecanismos Neurobiológicos: Dopamina e Recompensa</h3>
-            <p>A dopamina regula humor, motivação e o sistema de recompensa cerebral. Plataformas de vídeos curtos exploram esse circuito por meio de recompensa variável e imediata a cada rolagem de tela, gerando descargas dopaminérgicas imprevisíveis. A exposição crônica gera tolerância neurobiológica: o cérebro passa a exigir estímulos cada vez mais rápidos, desestimulando o engajamento em leituras e estudos acadêmicos.</p>
-
-            <h3>Intervenções Tecnológicas e Bem-Estar Digital</h3>
-            <p>Enquanto ferramentas nativas de limitação de tela mostram-se passivas e facilmente burláveis, o desenvolvimento de aplicações web interativas voltadas ao letramento digital atua como um recurso didático poderoso para estimular a autorregulação e a reflexão crítica.</p>
+        <!-- NEUROPLASTICIDADE -->
+        <section id="neuroplasticidade">
+            <h2><i class="fa-solid fa-brain"></i> Neuroplasticidade, Dopamina e Recompensa</h2>
+            <p>A dopamina é o neurotransmissor fundamental para a regulação do humor, da motivação e do sistema de recompensa cerebral. As plataformas digitais de vídeos curtos exploram diretamente esse circuito neuroquímico por meio do sistema de <strong>recompensa variável e imediata</strong> a cada rolagem de tela (<em>swipe</em>).</p>
+            <p>Como o cérebro humano possui alta neuroplasticidade — moldando suas conexões neurais com base nos estímulos diários repetidos —, a exposição crônica a conteúdos hiperestimulantes com duração inferior a 30 segundos treina o cérebro para buscar gratificação instantânea. Isso gera tolerância neurobiológica, dificultando enormemente a manutenção do foco em atividades de longo prazo, como a leitura de livros e o estudo acadêmico analítico.</p>
         </section>
 
-        <!-- PROCEDIMENTOS METODOLÓGICOS -->
-        <section id="metodologia">
-            <h2><i class="fa-solid fa-gears"></i> Procedimentos Metodológicos</h2>
-            <p>A pesquisa classifica-se quanto à natureza como <strong>aplicada</strong>, gerando conhecimentos práticos voltados à solução de um problema contemporâneo. Quanto aos objetivos, é <strong>exploratória e descritiva</strong>, unindo uma abordagem <strong>quali-quantitativa</strong>:</p>
-            <p>• <strong>Etapa Qualitativa:</strong> Fundamentada em revisão bibliográfica sistemática sobre neurociência, cognição, dopamina e dependência digital.</p>
-            <p>• <strong>Etapa Quantitativa:</strong> Coleta de dados primários obtidos através de questionários estruturados embarcados na aplicação web com <strong>89 participantes voluntários (N = 89)</strong>.</p>
-        </section>
-
-        <!-- DISCUSSÃO DOS RESULTADOS -->
-        <section id="resultados">
-            <h2><i class="fa-solid fa-chart-pie"></i> Discussão dos Resultados (89 Amostras)</h2>
+        <!-- DADOS E GRÁFICOS -->
+        <section id="dados">
+            <h2><i class="fa-solid fa-chart-pie"></i> Dados e Gráficos</h2>
             
-            <p><strong>Os dados abaixo representam os resultados consolidados da pesquisa de campo realizada com 89 participantes voluntários (N = 89). A análise evidencia a relação direta entre o tempo diário de exposição aos vídeos curtos, o rendimento acadêmico e os prejuízos na qualidade do sono da juventude.</strong></p>
+            <p><strong>Os dados abaixo representam os resultados consolidados da pesquisa de campo realizada com participantes voluntários. A análise evidencia a relação direta entre o tempo diário de exposição aos vídeos curtos, o rendimento acadêmico e os prejuízos na qualidade do sono da juventude.</strong></p>
 
             <div class="graficos-grid">
                 <!-- Gráfico 1: Perfil Demográfico -->
@@ -661,10 +653,19 @@
             </div>
         </section>
 
-        <!-- SEÇÃO DA PARTE PRÁTICA -->
-        <section id="pratica">
-            <h2><i class="fa-solid fa-laptop-code"></i> Plataforma Interativa: Diagnóstico & Plano Diário</h2>
-            <p>Como intervenção prática proposta neste TCC, desenvolvemos este módulo dinâmico. Responda ao questionário abaixo para receber seu diagnóstico cognitivo. A plataforma gerará <strong>tarefas diárias personalizadas</strong> salvando o seu progresso localmente no seu navegador!</p>
+        <!-- IMPACTOS -->
+        <section id="impactos">
+            <h2><i class="fa-solid fa-triangle-exclamation"></i> Impactos na Rotina e Cognição</h2>
+            <p>O uso desregrado de vídeos curtos desencadeia múltiplos prejuízos comprovados pela literatura científica e pelos dados empíricos coletados:</p>
+            <p>• <strong>Déficit de Atenção Sustentada:</strong> A incapacidade de manter o foco prolongado compromete o aprendizado em sala de aula e a capacidade de retenção de conteúdos complexos.</p>
+            <p>• <strong>Distúrbios do Sono e Melatonina:</strong> A emissão de luz azul combinada à hiperestimulação dopaminérgica noturna na cama inibe a produção natural de melatonina, gerando fadiga crônica e insônia.</p>
+            <p>• <strong>Procrastinação e Ansiedade:</strong> O ciclo vicioso da rolagem infinita gera culpa, ansiedade por perda de tempo (FOMO) e comportamentos análogos à dependência digital.</p>
+        </section>
+
+        <!-- SOLUÇÕES (PLATAFORMA INTERATIVA) -->
+        <section id="solucoes">
+            <h2><i class="fa-solid fa-laptop-code"></i> Soluções: Plataforma Interativa & Hábitos Saudáveis</h2>
+            <p>O sistema gerará <strong>tarefas diárias de reabilitações. </strong> </p>
 
             <div class="app-container">
                 <form id="form-diagnostico">
@@ -708,13 +709,13 @@
                         </select>
                     </div>
 
-                    <button type="button" class="btn-acao" onclick="processarDiagnostico()"><i class="fa-solid fa-chart-line"></i> Gerar Meu Diagnóstico e Plano Diário</button>
+                    <button type="button" class="btn-acao" onclick="processarDiagnostico()"><i class="fa-solid fa-chart-line"></i> Gerar Meu Plano Diário</button>
                 </form>
 
                 <!-- Painel de Resultados exibido após o teste -->
                 <div id="painel-resultados" class="painel-resultados">
                     <div class="card-diagnostico">
-                        <h4><i class="fa-solid fa-triangle-exclamation"></i> Diagnóstico de Hábitos Cognitivos</h4>
+                        <h4><i class="fa-solid fa-triangle-exclamation"></i> </h4>
                         <p id="resumo-nivel" style="font-weight: bold; margin-bottom: 0.5rem;"></p>
                         <p><strong>Problemas Identificados na sua rotina:</strong></p>
                         <ul id="lista-problemas" class="lista-problemas"></ul>
@@ -723,7 +724,7 @@
 
                     <div class="painel-tarefas">
                         <h3><i class="fa-solid fa-calendar-check"></i> Suas Tarefas Diárias de Reabilitação Focada</h3>
-                        <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 1.2rem;">Conclua as tarefas abaixo e marque-as como feitas. Amanhã, as tarefas concluídas darão lugar a novos desafios, enquanto as não concluídas permanecerão ativas!</p>
+                        <p style="font-size: 0.88rem; color: #64748b; margin-bottom: 1.2rem;">Conclua as tarefas abaixo e marque-as como feitas. Amanhã, as tarefas concluídas darão lugar a novos desafios, enquanto as não concluídas permanecerão ativas!</p>
 
                         <div id="container-tarefas"></div>
                     </div>
@@ -731,7 +732,7 @@
             </div>
         </section>
 
-        <!-- REFERÊNCIAS DO TCC -->
+        <!-- REFERÊNCIAS -->
         <section id="referencias">
             <h2><i class="fa-solid fa-quote-right"></i> Referências Bibliográficas</h2>
             <ul class="referencias">
